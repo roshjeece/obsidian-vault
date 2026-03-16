@@ -70,3 +70,8 @@ public class RecursiveFibonacci {
 }
 
 ```
+
+## Related
+- [[Sorting Algorithms]] — recursion is the foundation of merge sort and quicksort
+- [[Merge Sort]] — direct application of recursive thinking
+- [[Java Course]] — course overview

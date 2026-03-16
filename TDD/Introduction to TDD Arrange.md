@@ -417,3 +417,10 @@ In this context, an **API (Application Programming Interface)** is the public �
 | **Responding to change** | Flexibility, welcome change |
 
 See more: [Agile Manifesto](https://agilemanifesto.org/iso/en/principles.html)
+
+## Related
+- [[Spring Framework]] — Spring projects are tested using TDD principles
+- [[Spring JPA Overview - Annotations]] — JPA repositories require integration testing
+- [[Java Course]] — TDD is practiced throughout the Java curriculum
+- [[Git]] — TDD cycle pairs with frequent commits: red, green, refactor, commit
+- [[To Do Study - Self Learning]] — todo app is a direct TDD application

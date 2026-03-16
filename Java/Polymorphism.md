@@ -78,3 +78,8 @@ class Hybrid extends Car {
 ```
 
 **Output: from Car! Defaults to parent that matches signature requirement**
+
+## Related
+- [[Inheritance]] — polymorphism depends on inheritance; upcasting requires a parent-child relationship
+- [[Java Course]] — course overview
+- [[Spring JPA Overview - Annotations]] — Spring uses polymorphism extensively in its repository interfaces

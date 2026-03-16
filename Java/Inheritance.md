@@ -216,3 +216,8 @@ class Hybrid extends Car{
 // Output: true
 // Output: false
 ```
+
+## Related
+- [[Polymorphism]] — method overriding and upcasting build directly on inheritance
+- [[Java Course]] — course overview
+- [[Spring Framework]] — Spring beans use inheritance and interface implementation patterns

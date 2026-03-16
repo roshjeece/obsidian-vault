@@ -32,3 +32,9 @@ public class Main {
     }
 
 ```
+
+## Related
+- [[Recursion]] — many sorting algorithms use recursive logic
+- [[Merge Sort]] — merge sort is a direct application of sorting algorithm concepts
+- [[Arrays]] — sorting operates on arrays
+- [[Java Course]] — course overview

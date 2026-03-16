@@ -95,3 +95,9 @@ efficiently.
 
  */
 ```
+
+## Related
+- [[Recursion]] — merge sort is a recursive divide and conquer algorithm
+- [[Sorting Algorithms]] — merge sort is one of several sorting algorithms covered
+- [[Arrays]] — merge sort operates on arrays using two-pointer technique
+- [[Java Course]] — course overview
