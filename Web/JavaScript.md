@@ -259,3 +259,8 @@ if (age > 21) {
 // ternary operators (compact if/else)
 console.log(age > 21 ? "Yeah!!!" : "Booo!!!") // Output: Yeah!!!
 ```
+## Related
+- [[JavaScript - Strings, Arrays, Objects]] — extends core JS with data structures
+- [[JavaScript - DOM]] — DOM manipulation builds on JS fundamentals
+- [[Beginning Web Programming]] — course overview
+- [[Introduction to TDD Arrange]] — TDD principles apply to JavaScript as well as Java

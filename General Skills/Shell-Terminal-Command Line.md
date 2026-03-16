@@ -201,3 +201,8 @@ Tools —> Create Command-line Launcher
 export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 Add to .zshrc
 ```
+## Related
+- [[Git]] — terminal is the primary interface for Git commands
+- [[Introduction to Version Control -- Git]] — version control is operated via shell
+- [[Spring Framework]] — Gradle commands run from terminal to build and test Spring apps
+- [[Shortcuts]] — companion note for tool shortcuts

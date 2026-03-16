@@ -52,3 +52,8 @@ datasource:
 	url: jdbc:postgresql://localhost:543*/aircraft
 	driver-class-name: org.postgresql.Driver
 ```
+## Related
+- [[Spring Framework]] — JPA is the persistence layer of the Spring stack
+- [[SQL Course]] — JPA generates SQL under the hood via Hibernate
+- [[Introduction to TDD Arrange]] — @DataJpaTest is the test type for the repository layer
+- [[Day 3 Notes - Basic SQL Queries]] — understanding raw SQL helps understand what JPA generates

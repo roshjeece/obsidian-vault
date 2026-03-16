@@ -69,3 +69,8 @@ Git Branch Control
 ```shell
 gco
 ```
+## Related
+- [[Git]] — overview note
+- [[JM Lesson - 12MAR26]] — branching and remote commands
+- [[Shell-Terminal-Command Line]] — terminal is the primary interface for Git
+- [[Intro Logistics-Decomposition-Github]] — GitHub introduced in web course context

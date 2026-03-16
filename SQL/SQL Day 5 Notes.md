@@ -78,3 +78,10 @@ CREATE TABLE order_items (
 );
 ```
 
+
+## Related
+- [[SQL Day 4]] — queries run against the database created here
+- [[SQL Day 6.md]] — JOINs and views query this database
+- [[Day 3 Notes - Basic SQL Queries]] — DDL commands used to build this schema
+- [[Spring JPA Overview - Annotations]] — Spring generates equivalent schema via Flyway migrations
+- [[SQL Course]] — course overview

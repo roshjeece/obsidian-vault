@@ -32,3 +32,8 @@ Delete remote branch: `git push <remote_name> --delete [branch name]`
 - `<remote_name>` is typically origin
 
 See remote repositories: `git remote -v`
+
+## Related
+- [[Git]] — foundational Git concepts
+- [[Introduction to Version Control -- Git]] — version control overview
+- [[Shell-Terminal-Command Line]] — branch commands run in terminal

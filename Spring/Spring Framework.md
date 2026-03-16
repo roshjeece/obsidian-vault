@@ -389,3 +389,10 @@ If you can navigate to `http://localhost:8080/h2-console`, the app is running.
 - Understand the roles of **Entity vs Repository vs Database**
 - Be able to explain the full flow: **Controller → Service → Repository → DB**
 - Know which test style goes with which layer (MockMvc vs Mockito vs DataJpaTest)
+## Related
+- [[Spring JPA Overview - Annotations]] — JPA layer sits beneath the Spring service/repository pattern
+- [[Introduction to TDD Arrange]] — controller, service, and repository layers each have a corresponding test type
+- [[Inheritance]] — Spring relies heavily on interface implementation and class hierarchies
+- [[Polymorphism]] — Spring's dependency injection uses polymorphic references
+- [[SQL Course]] — Spring JPA maps Java objects to SQL database tables
+- [[To Do Study - Self Learning]] — todo app is a direct Spring Boot application

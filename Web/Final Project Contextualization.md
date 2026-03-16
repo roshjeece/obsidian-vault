@@ -52,3 +52,12 @@ Code & Presentation
 - Code should be organized and readable: comment important parts
 - ==<u>***You’ll present your app: be ready to explain structure, design choices, and learnings***</u>==
 - Total points: 200 (check rubric for breakdown)
+
+## Related
+- [[Spring Framework]] — Spring Boot is the backend requirement
+- [[Spring JPA Overview - Annotations]] — JPA required for PostgreSQL integration
+- [[CSS - Bootstrap]] — Bootstrap used for frontend
+- [[JavaScript - DOM]] — DOM manipulation needed for dynamic UI
+- [[SQL Day 5 Notes]] — PostgreSQL schema design needed for two joined tables
+- [[Introduction to TDD Arrange]] — TDD applies to full-stack project testing
+- [[Beginning Web Programming]] — course overview

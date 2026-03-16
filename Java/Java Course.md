@@ -38,3 +38,10 @@
 [[Inheritance]]
 
 [[Polymorphism]]
+## Related
+- [[Java Day 1 - Programming Fundamentals]] — course starting point
+- [[Inheritance]] — core OOP topic
+- [[Polymorphism]] — core OOP topic
+- [[Recursion]] — advanced topic covered later in course
+- [[Sorting Algorithms]] — algorithms covered in intermediate Java
+- [[Spring Framework]] — Java is the foundation for Spring Boot development

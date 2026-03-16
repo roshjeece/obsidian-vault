@@ -74,3 +74,9 @@ Career Tips:
 New Git Information:
 
 - Avoid: `git add .` - Why?
+## Related
+- [[Decomposition]] — decomposition covered in this session
+- [[Git]] — Git introduced here in web course context
+- [[Introduction to Version Control -- Git]] — detailed Git concepts
+- [[Beginning Web Programming]] — course overview
+- [[Final Project Contextualization]] — course roadmap referenced here

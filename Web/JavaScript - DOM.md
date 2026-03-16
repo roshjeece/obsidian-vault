@@ -354,3 +354,12 @@ meow
 woof
 woof
 ```
+
+## Related
+- [[JavaScript]] — JS fundamentals required for DOM manipulation
+- [[JavaScript - Strings, Arrays, Objects]] — objects and arrays used in DOM scripts
+- [[CSS]] — DOM manipulation can dynamically modify CSS styles
+- [[CSS - Bootstrap]] — Bootstrap components are targeted via DOM selectors
+- [[25FEB26]] — forms and DOM selectors used together
+- [[Beginning Web Programming]] — course overview
+- [[Spring Framework]] — DOM manipulation is the frontend counterpart to Spring REST endpoints

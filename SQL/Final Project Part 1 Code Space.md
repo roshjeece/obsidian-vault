@@ -197,3 +197,10 @@ GROUP BY e.department --
 ORDER BY high_value_products_sold DESC
 LIMIT 5;
 ```
+## Related
+- [[SQL Day 6.md]] — JOINs used extensively here
+- [[SQL Day 7.md]] — GROUP BY and aggregates used in Tasks 12 and 13
+- [[SQL Day 5 Notes]] — schema design referenced in table creation
+- [[Spring JPA Overview - Annotations]] — Spring JPA performs equivalent operations in Java
+- [[Spring Framework]] — this project's schema is the type Spring Boot would sit on top of
+- [[SQL Course]] — course overview

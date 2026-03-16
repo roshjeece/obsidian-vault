@@ -112,3 +112,9 @@ Homework:
 Font Awesome
 
 Create a kit, need it for tomorrow
+## Related
+- [[CSS - Bootstrap]] — Bootstrap builds on raw CSS knowledge
+- [[Pseudo-classes-Positioning]] — extends CSS with state-based styling
+- [[JavaScript - DOM]] — DOM manipulation can dynamically change CSS styles
+- [[Beginning Web Programming]] — course overview
+- [[25FEB26]] — CSS classes and IDs used in DOM examples

@@ -31,3 +31,7 @@ input: focus {
 							background-color: red;
 							}
 ```
+## Related
+- [[CSS]] — pseudo-classes are an extension of core CSS
+- [[CSS - Bootstrap]] — Bootstrap uses pseudo-classes internally
+- [[Beginning Web Programming]] — course overview

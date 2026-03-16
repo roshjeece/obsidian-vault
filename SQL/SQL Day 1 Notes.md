@@ -120,3 +120,8 @@ erDiagram
     }
 
 ```
+## Related
+- [[SQL Course]] — course overview
+- [[SQL Day 2 Notes]] — builds on Day 1 with keys and relationships
+- [[Day 3 Notes - Basic SQL Queries]] — applies Day 1 concepts with SELECT queries
+- [[Spring JPA Overview - Annotations]] — JPA maps Java classes to SQL tables and datatypes

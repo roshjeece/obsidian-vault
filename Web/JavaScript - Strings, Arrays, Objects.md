@@ -294,3 +294,9 @@ let square = (num, age) => {
     return num + age
 }
 ```
+
+## Related
+- [[JavaScript]] — foundational JS concepts
+- [[JavaScript - DOM]] — DOM manipulation uses arrays and objects heavily
+- [[Arrays]] — Java arrays parallel JavaScript array methods covered here
+- [[Beginning Web Programming]] — course overview

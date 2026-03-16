@@ -127,3 +127,9 @@ AS SELECT customer_id, first_name, last_name, 'XXXX-XXXX-XXXX-' || right(license
 select * FROM customer_secure;
 ```
 
+
+## Related
+- [[SQL Day 7.md]] — views and aggregates introduced in Day 7
+- [[SQL Course]] — course overview
+- [[Spring JPA Overview - Annotations]] — views in SQL parallel the abstraction Spring repositories provide
+- [[Final Project Part 1 Code Space]] — masking PII and views applied in project

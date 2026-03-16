@@ -814,3 +814,8 @@ jshell> {
    ...> }
 6.666666666666667
 ```
+## Related
+- [[Java Course]] — formal Java course to cross-reference with Udemy content
+- [[Self Study]] — parent note
+- [[Inheritance]] — OOP concepts covered in both formal and self-study tracks
+- [[Polymorphism]] — OOP concepts covered in both formal and self-study tracks
