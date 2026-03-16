@@ -85,6 +85,133 @@ public class Main {
 }
 ```
 
+
+## Applied: xyz Company R/W Functionality:
+
+Menu - Case Additions:
+```Java
+case 6:  
+    xyz.exportEmployeeList();  
+    break;  
+case 7:  
+    xyz.importEmployeeList();  
+    break;
+```
+
+Company Class - Method Additions:
+```Java
+void exportEmployeeList() {  
+    try {  
+        FileWriter myWriter = new FileWriter("employees.txt");  
+        for (Employee employee : employees) {  
+            myWriter.write(employee.toFileString() + "\n");  
+        };  
+        myWriter.close();  
+        System.out.println("Successfully wrote to file.");  
+    } catch (IOException e) {  
+        System.out.println("An error occurred.");  
+        e.printStackTrace();  
+    }  
+}  
+  
+void importEmployeeList(){  
+    File myObj = new File("employees.txt");  
+  
+    try (Scanner myReader = new Scanner(myObj)) {  
+        while (myReader.hasNextLine()) {  
+            String data = myReader.nextLine();  
+            String[] parts = data.split(",");  
+            String type = parts[0];  
+  
+            switch (type) {  
+                case "SalariedFull":  
+                    employees.add(  
+                            new SalariedFull(  
+                                    Integer.parseInt(parts[1]),  
+                                    parts[2],  
+                                    parts[3],  
+                                    Double.parseDouble(parts[4]),  
+                                    Double.parseDouble(parts[5])  
+                            ));  
+                    break;  
+                case "HourlyFull":  
+                    employees.add(  
+                            new HourlyFull(  
+                                    Integer.parseInt(parts[1]),  
+                                    parts[2],  
+                                    parts[3],  
+                                    Double.parseDouble(parts[4]),  
+                                    Double.parseDouble(parts[5]),  
+                                    Double.parseDouble(parts[6])  
+                            ));  
+                    break;  
+                case "PartTime":  
+                    employees.add(  
+                            new PartTime(  
+                                    Integer.parseInt(parts[1]),  
+                                    parts[2],  
+                                    parts[3],  
+                                    Double.parseDouble(parts[4]),  
+                                    Double.parseDouble(parts[5])  
+  
+                            ));  
+                    break;  
+                default:  
+                    System.out.println("Not a known employee type"); break;  
+            }  
+        }  
+    } catch (FileNotFoundException e) {  
+        // PRINT GENERIC ERROR MESSAGE TO THE TERMINAL  
+        System.out.println("An error occurred.");  
+        // PRINT FULL STACK TRACE TO HELP DIAGNOSE THE PROBLEM  
+        e.printStackTrace();  
+    }  
+  
+}
+```
+
+Employee Class - Method Additions:
+```Java
+class Employee {  
+    int id;  
+    String name;  
+    String address;
+    
+    public String toFileString() {  
+    return id + "," + name + "," + address;  
+}
+
+class PartTime extends Employee {  
+    double hours;  
+    double rate;
+    
+    public String toFileString() {  
+    return "PartTime," + super.toFileString() + "," + hours + "," + rate;  
+}
+
+class FullTime extends Employee {  
+    double benefit;
+    
+    public String toFileString() {  
+    return super.toFileString() + "," + benefit;  
+}
+
+class SalariedFull extends FullTime {  
+    double salary;
+    
+    public String toFileString() {  
+    return "SalariedFull," + super.toFileString() + "," + salary;  
+}
+
+class HourlyFull extends FullTime {  
+    double hours;  
+    double rate;
+    
+    public String toFileString() {  
+    return "HourlyFull," + super.toFileString() + "," + hours + "," + rate;  
+}
+```
+
 ## Related
 - [[Java Course]] — course overview
 - [[Shell-Terminal-Command Line]] — file manipulation from terminal complements Java file I/O
