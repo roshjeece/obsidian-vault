@@ -88,7 +88,6 @@ function - 3 arguments (start, end, divident)
 	Display array			
 
 Invoke function		
-
 ```
 
 
