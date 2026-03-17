@@ -706,6 +706,5 @@ public class Main {
 ```
 ## Related
 - [[Sorting Algorithms]] — sorting algorithms operate on arrays
-- [[Sorting Algorithms]] — merge sort uses two-pointer technique on arrays
 - [[ArrayList]] — ArrayList is the dynamic alternative to fixed arrays
 - [[Java Course]] — course overview

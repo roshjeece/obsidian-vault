@@ -173,7 +173,7 @@ We don’t want this to happen because the rank is dependent on the score. Separ
 Third Normal Form (3NF):
 
 - Must be in 2NF
-- No transit
+- No transitive dependencies — non-key columns cannot depend on other non-key columns
 
 DB Example:
 

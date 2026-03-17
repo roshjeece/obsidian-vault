@@ -1,7 +1,7 @@
 ---
 
 ---
-```java
+```sql
 -- Task 1: See Screenshot
 
 -- Task 2: See Screenshot
