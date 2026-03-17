@@ -35,6 +35,56 @@ public class Main {
 
 ## Related
 - [[Recursion]] — many sorting algorithms use recursive logic
-- [[Merge Sort]] — merge sort is a direct application of sorting algorithm concepts
+- [[Sorting Algorithms]] — merge sort is a direct application of sorting algorithm concepts
 - [[Arrays]] — sorting operates on arrays
 - [[Java Course]] — course overview
+---
+
+## Merge Sort
+
+- Divide and conquer approach
+- Split arrays, sort each half, merge back together
+- $O(n \log n)$ time complexity
+- $O(n)$ space complexity
+
+**Two-Pointer Merge Implementation:**
+```java
+import java.util.Arrays;
+
+public class MergeSort {
+    public static void main (String[] args) {
+        int[] arr1 = {2, 10, 15, 17, 21};
+        int[] arr2 = {6, 8, 19};
+        int[] newArray = new int[arr1.length + arr2.length];
+        int i = 0;
+        int j = 0;
+
+        while(i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                newArray[i + j] = arr1[i++];
+            }
+            else {
+                newArray[i + j] = arr2[j++];
+            }
+        }
+
+        // Drain remaining elements from whichever array is not exhausted
+        while (i < arr1.length) { newArray[i + j] = arr1[i++]; }
+        while (j < arr2.length) { newArray[i + j] = arr2[j++]; }
+
+        System.out.println(Arrays.toString(newArray));
+    }
+}
+```
+
+Key concepts: two-pointer technique, draining remaining elements, ternary operator alternative.
+
+---
+
+## Algorithm Comparison
+
+| Algorithm | Time Complexity | Space | Use Case |
+|---|---|---|---|
+| Bubble Sort | O(n²) | O(1) | Learning only |
+| Merge Sort | O(n log n) | O(n) | Large datasets |
+

@@ -73,5 +73,47 @@ public class RecursiveFibonacci {
 
 ## Related
 - [[Sorting Algorithms]] — recursion is the foundation of merge sort and quicksort
-- [[Merge Sort]] — direct application of recursive thinking
+- [[Sorting Algorithms]] — direct application of recursive thinking
 - [[Java Course]] — course overview
+## Practice
+
+**Add Digits** — take an integer and recursively add its digits together
+```java
+public class RecursiveAddDigits {
+    public static void main(String[] args) {
+        System.out.println(addDigits(1234));
+    }
+
+    public static int addDigits(int num) {
+        // BASE CASE
+        if (num == 0)
+            return 0;
+        // RECURSIVE CASE — extract last digit, add remaining
+        return num%10 + addDigits(num/10);
+    }
+}
+```
+
+Remember: `% 10` gets the final digit, `/ 10` gets the remaining digits.
+
+---
+
+**Count Up to Target** — print digits from 0 to a target number recursively
+```java
+public class CountUpTo {
+    public static void main (String[] args) {
+        int current = 0;
+        int target = 5;
+        countUp(target, current);
+    }
+
+    public static int countUp(int target, int current) {
+        // BASE CASE
+        if (current > target)
+            return target;
+        // RECURSIVE CASE
+        System.out.println(current);
+        return (countUp(target, current + 1));
+    }
+}
+```

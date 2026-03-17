@@ -29,11 +29,11 @@
 
 [[ArrayList]]
 
-[[Merge Sort]]
+[[Sorting Algorithms]]
 
 [[Recursion]]
 
-[[More Recursion Practice]]
+[[Recursion]]
 
 [[Inheritance]]
 
