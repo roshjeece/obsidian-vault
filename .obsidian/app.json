@@ -3,5 +3,6 @@
   "userIgnoreFilters": [
     "templates/"
   ],
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./Media"
 }

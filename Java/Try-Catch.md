@@ -133,7 +133,61 @@ public class Main {
 }
 ```
 
+##### Combined Catches
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        try {  
+            int[] arr = {1,2,3};  
+            System.out.println(arr[10]);  
+  
+            int x = 3;  
+            int y = 0;  
+            int z = x / y;  
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {  
+            System.out.println("Combined exception");  
+        } catch (Exception e) {  
+            System.out.print("Parent Exception");  
+        }  
+  
+    }  
+}
+```
+
+##### Null Pointer Exception Catch
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        // Initializing String variable with null value  
+        String s = null;  
+  
+        // Checking if s.equals null  
+        try  
+        {  
+            // This line of code throws NullPointerException because s is null  
+            if (s.equals("gfg"))  
+                System.out.print("Same");  
+            else  
+                System.out.print("Not Same");  
+        }  
+        catch(NullPointerException e)  
+        {  
+            System.out.print("NullPointerException Caught");  
+        }  
+  
+    }  
+}
+```
 
 Important: Children catches must be before Parent catches
 See more: https://rollbar.com/blog/java-exceptions-hierarchy-explained/
-![[Pasted image 20260317145211.png]]
+![[Pasted image 20260317150705.png]]
+
+### Exceptions vs. Errors
+- Exceptions you can generally handle
+- Errors you generally cannot handle
+
+
+Unchecked exception (you can check or it y)
