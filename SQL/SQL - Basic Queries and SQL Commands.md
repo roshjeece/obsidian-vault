@@ -62,8 +62,8 @@
 - LIMIT
     - number of rows to extract
 ## Related
-- [[SQL Day 2 Notes]] — keys and relationships that queries operate on
+- [[SQL - Keys, Relationships, and Constraints]] — keys and relationships that queries operate on
 - [[SQL Course]] — course overview
-- [[SQL Day 4]] — applies basic queries with JOINs and filters
+- [[SQL - Filtering, Joins, and String Functions]] — applies basic queries with JOINs and filters
 - [[Spring JPA Overview - Annotations]] — Spring Data generates DDL and DML automatically
 - [[Final Project Part 1 Code Space]] — SELECT, JOIN, and aggregate queries used throughout

@@ -58,6 +58,6 @@ Code & Presentation
 - [[Spring JPA Overview - Annotations]] — JPA required for PostgreSQL integration
 - [[CSS - Bootstrap]] — Bootstrap used for frontend
 - [[JavaScript - DOM]] — DOM manipulation needed for dynamic UI
-- [[SQL Day 5 Notes]] — PostgreSQL schema design needed for two joined tables
+- [[SQL - Database Creation and Schema Design]] — PostgreSQL schema design needed for two joined tables
 - [[Introduction to TDD Arrange]] — TDD applies to full-stack project testing
 - [[Beginning Web Programming]] — course overview

@@ -79,7 +79,7 @@ FROM orders
 GROUP BY customer_num;
 ```
 ## Related
-- [[Day 3 Notes - Basic SQL Queries]] — basic SELECT syntax used here
-- [[SQL Day 5 Notes]] — full database creation builds on Day 4 queries
+- [[SQL - Basic Queries and SQL Commands]] — basic SELECT syntax used here
+- [[SQL - Database Creation and Schema Design]] — full database creation builds on Day 4 queries
 - [[SQL Day 6.md]] — JOINs and views extend Day 4 concepts
 - [[SQL Course]] — course overview

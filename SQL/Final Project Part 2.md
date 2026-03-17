@@ -39,7 +39,7 @@ erDiagram
 ```
 ## Related
 - [[SQL Day 6.md]] — normalization principles applied in this ERD
-- [[SQL Day 1 Notes]] — ERD concept introduced here
-- [[SQL Day 2 Notes]] — primary and foreign key relationships shown in this diagram
+- [[SQL - Foundations, Datatypes, and ERD]] — ERD concept introduced here
+- [[SQL - Keys, Relationships, and Constraints]] — primary and foreign key relationships shown in this diagram
 - [[Final Project Part 1 Code Space]] — Part 1 and Part 2 are companion projects
 - [[SQL Course]] — course overview

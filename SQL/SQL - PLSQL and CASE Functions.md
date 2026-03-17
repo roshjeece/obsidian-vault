@@ -36,4 +36,4 @@ END;
 ## Related
 - [[SQL Course]] — course overview
 - [[Case Statements & more]] — CASE expressions covered the same week
-- [[Day 3 Notes - Basic SQL Queries]] — foundational SQL concepts applied here
+- [[SQL - Basic Queries and SQL Commands]] — foundational SQL concepts applied here

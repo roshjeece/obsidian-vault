@@ -60,8 +60,8 @@ Database system: organization of components that define and regulate the collect
 
 
 ## Related
-- [[SQL Day 1 Notes]] — foundational concepts
+- [[SQL - Foundations, Datatypes, and ERD]] — foundational concepts
 - [[SQL Course]] — course overview
-- [[Day 3 Notes - Basic SQL Queries]] — applies keys and relationships in SELECT queries
+- [[SQL - Basic Queries and SQL Commands]] — applies keys and relationships in SELECT queries
 - [[Final Project Part 1 Code Space]] — foreign keys and referential integrity applied in project
 - [[Spring JPA Overview - Annotations]] — @Entity and @Id map directly to primary keys
