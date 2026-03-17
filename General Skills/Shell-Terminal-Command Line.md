@@ -141,7 +141,7 @@ OVER THE WIRE - Level 0
 
 ```shell
 ssh bandit0@bandit.labs.overthewire.org -p 2220
-Password: bandit0
+Password: [redacted]
 ```
 
 OVER THE WIRE - Level 0-1
@@ -150,7 +150,7 @@ OVER THE WIRE - Level 0-1
 ls
 cat readme
 
-Password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+Password: [redacted]
 ```
 
 OVER THE WIRE - Level 1-2
@@ -158,7 +158,7 @@ OVER THE WIRE - Level 1-2
 ```shell
 cat ./-
 
-Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+Password: [redacted]
 ```
 
 OVER THE WIRE - Level 2-3
@@ -166,7 +166,7 @@ OVER THE WIRE - Level 2-3
 ```shell
 cat ./- [[TAB KEY]]
 
-Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+Password: [redacted]
 ```
 
 OVER THE WIRE - Level 3-4
@@ -176,7 +176,7 @@ cd inhere/
 ls -a
 cat ./...Hiding-From-You
 
-Password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+Password: [redacted]
 ```
 
 OVER THE WIRE - Level 4-5
@@ -186,7 +186,7 @@ cd inhere
 ls
 cat ./-file01 (and so on)
 
-Password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+Password: [redacted]
 ```
 
 k get pods FILENAME -oyaml | pbcopy
