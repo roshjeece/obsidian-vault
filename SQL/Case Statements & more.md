@@ -58,7 +58,7 @@ CHECK (cost >= 0);
 See: [PostgreSQL CHECK Constraints](https://neon.com/postgresql/postgresql-tutorial/postgresql-check-constraint)
 
 ## Related
-- [[SQL - PLSQL and CASE Functions]] — same week, related SQL concepts
-- [[SQL - Basic Queries and SQL Commands]] — foundational SQL syntax
+- [[PLSQL and CASE Functions]] — same week, related SQL concepts
+- [[Basic Queries and SQL Commands]] — foundational SQL syntax
 - [[Final Project Part 1 Code Space]] — conditional logic applied in project queries
 - [[SQL Course]] — course overview

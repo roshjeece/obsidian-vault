@@ -98,4 +98,4 @@ public class Main {
 - [[Arrays]] — binary search operates on sorted arrays
 - [[Sorting Algorithms]] — binary search requires a sorted array; pairs with sort algorithms
 - [[Conditionals and Switch Statements]] — input validation uses conditional logic
-- [[Java Course]] — course overview
+- [[INDEX - Java Course]] — course overview

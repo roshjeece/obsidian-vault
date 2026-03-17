@@ -115,4 +115,4 @@ Don’t Do It!
 - [[Inheritance]] — inheritance builds on the class/object model established here
 - [[Polymorphism]] — polymorphism requires understanding of classes and objects first
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
-- [[Java Course]] — course overview
+- [[INDEX - Java Course]] — course overview

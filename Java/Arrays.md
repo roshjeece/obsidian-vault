@@ -707,4 +707,4 @@ public class Main {
 ## Related
 - [[Sorting Algorithms]] — sorting algorithms operate on arrays
 - [[ArrayList]] — ArrayList is the dynamic alternative to fixed arrays
-- [[Java Course]] — course overview
+- [[INDEX - Java Course]] — course overview

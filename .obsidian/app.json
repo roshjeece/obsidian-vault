@@ -2,5 +2,6 @@
   "promptDelete": false,
   "userIgnoreFilters": [
     "templates/"
-  ]
+  ],
+  "alwaysUpdateLinks": true
 }

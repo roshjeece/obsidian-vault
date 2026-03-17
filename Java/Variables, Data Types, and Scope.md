@@ -50,4 +50,4 @@ pi = pi + 1; // will not run because of the 'final'
 - [[Scanner, Methods, and Number Systems]] — data types are used directly in Scanner input handling
 - [[Conditionals and Switch Statements]] — boolean type is the foundation of all conditional logic
 - [[Loops]] — loop counters and conditions depend on correct data type usage
-- [[Java Course]] — course overview
+- [[INDEX - Java Course]] — course overview

@@ -106,4 +106,4 @@ private final SoldierRepository soldierRepository;
 - [[Spring Framework]] — Spring's DI is polymorphism applied at the framework level
 - [[Spring JPA Overview - Annotations]] — repository interfaces are polymorphic by design
 - [[Introduction to TDD Arrange]] — polymorphic behavior is tested via Mockito mocks
-- [[Java Course]] — course overview
+- [[INDEX - Java Course]] — course overview

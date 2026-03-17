@@ -37,6 +37,6 @@
 
 ## Related
 - [[Spring Framework]] — backend counterpart to this frontend course
-- [[SQL - Database Creation and Schema Design]] — PostgreSQL required for capstone
+- [[Database Creation and Schema Design]] — PostgreSQL required for capstone
 - [[Introduction to TDD Arrange]] — TDD applies to JavaScript as well as Java
 - [[Git]] — Git introduced in this course and used throughout

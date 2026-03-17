@@ -80,8 +80,8 @@ CREATE TABLE order_items (
 
 
 ## Related
-- [[SQL - Filtering, Joins, and String Functions]] — queries run against the database created here
+- [[Filtering, Joins, and String Functions]] — queries run against the database created here
 - [[SQL Day 6.md]] — JOINs and views query this database
-- [[SQL - Basic Queries and SQL Commands]] — DDL commands used to build this schema
+- [[Basic Queries and SQL Commands]] — DDL commands used to build this schema
 - [[Spring JPA Overview - Annotations]] — Spring generates equivalent schema via Flyway migrations
 - [[SQL Course]] — course overview

@@ -72,5 +72,5 @@ implementation 'org.flywaydb:flyway-database-postgresql'
 ## Related
 - [[Spring JPA Overview - Annotations]] — JPA entities must stay in sync with Flyway migrations
 - [[Spring Framework]] — Flyway is configured as part of the Spring Boot datasource setup
-- [[SQL - Database Creation and Schema Design]] — Flyway migrations are versioned SQL CREATE TABLE statements
+- [[Database Creation and Schema Design]] — Flyway migrations are versioned SQL CREATE TABLE statements
 - [[To Do Study - Self Learning]] — Flyway migration sync is an open todo app task
