@@ -75,3 +75,65 @@ public class Main {
 }
 ```
 Output (graceful): "Just for fun"
+
+Another example:
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        try {  
+            int x = 3;  
+            int y = 0;  
+            int z = x / y;  
+        } catch (Exception e) {  
+            System.out.println(e.getMessage());  
+        }  
+    }  
+}
+```
+Output (graceful): "/ by zero"
+
+
+##### Specifying Exception Types
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        try {  
+            int x = 3;  
+            int y = 0;  
+            int z = x / y;  
+        } catch (ArithmeticException e) {  
+            System.out.println("Arithmetic exception");  
+        }  
+    }  
+}
+```
+Output: "Arithmetic exception"
+
+##### Multiple Catches
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        try {  
+            int[] arr = {1,2,3};  
+            System.out.println(arr[10]);  
+  
+            int x = 3;  
+            int y = 0;  
+            int z = x / y;  
+        } catch (ArithmeticException e) {  
+            System.out.println("Arithmetic exception");  
+        } catch (ArrayIndexOutOfBoundsException e) {  
+            System.out.println("Array out of bounds exception");  
+        }  
+  
+    }  
+}
+```
+
+
+Important: Children catches must be before Parent catches
+See more: https://rollbar.com/blog/java-exceptions-hierarchy-explained/
+![[Pasted image 20260317145211.png]]
