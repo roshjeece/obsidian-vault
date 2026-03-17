@@ -77,6 +77,6 @@ New Git Information:
 ## Related
 - [[Decomposition]] — decomposition covered in this session
 - [[Git]] — Git introduced here in web course context
-- [[Introduction to Version Control -- Git]] — detailed Git concepts
+- [[Git]] — detailed Git concepts
 - [[Beginning Web Programming]] — course overview
 - [[Final Project Contextualization]] — course roadmap referenced here

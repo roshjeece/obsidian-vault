@@ -257,3 +257,9 @@ UML — Class Relationships:
 - Composition
 
 Elegant, simple solution that is achieved by using constructor chaining with this() — delegating from simpler constructors to the most complete one, avoiding duplicated initialization logic. 
+
+## Related
+- [[Inheritance]] — constructor chaining and this() are essential for understanding inheritance constructors
+- [[Polymorphism]] — static vs non-static context matters when working with polymorphic references
+- [[Methods, Overloading, and Classes]] — constructors are a specialized form of method overloading
+- [[Java Course]] — course overview

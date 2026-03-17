@@ -35,5 +35,5 @@ See remote repositories: `git remote -v`
 
 ## Related
 - [[Git]] — foundational Git concepts
-- [[Introduction to Version Control -- Git]] — version control overview
+- [[Git]] — version control overview
 - [[Shell-Terminal-Command Line]] — branch commands run in terminal

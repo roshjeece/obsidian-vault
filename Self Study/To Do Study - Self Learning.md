@@ -94,4 +94,4 @@ Apply everything above to `cohort11-Todo`:
 - [[Spring Framework]] — MVC is the core pattern Spring implements
 - [[Spring JPA Overview - Annotations]] — JPA is the repository layer
 - [[Introduction to TDD Arrange]] — testing layers map directly to TDD principles
-- [[Self Study]] — parent note
+- [[General Skills]] — parent note

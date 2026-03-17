@@ -37,3 +37,4 @@ END;
 - [[SQL Course]] — course overview
 - [[Case Statements & more]] — CASE expressions covered the same week
 - [[SQL - Basic Queries and SQL Commands]] — foundational SQL concepts applied here
+- [[Conditionals and Switch Statements]] — SQL CASE is the direct equivalent of Java switch statements

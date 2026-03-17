@@ -63,3 +63,5 @@ let num: number;
 let num2: number = 3;  
   
 let isMarried: boolean = false;
+
+Stick with the `npx tsc` → `node build/index.js` workflow as you keep learning.

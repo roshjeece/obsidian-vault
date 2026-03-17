@@ -816,6 +816,7 @@ jshell> {
 ```
 ## Related
 - [[Java Course]] — formal Java course to cross-reference with Udemy content
-- [[Self Study]] — parent note
+- [[General Skills]] — parent note
 - [[Inheritance]] — OOP concepts covered in both formal and self-study tracks
 - [[Polymorphism]] — OOP concepts covered in both formal and self-study tracks
+- [[Variables, Data Types, and Scope]] — Udemy covers primitive types and casting in more depth than formal course

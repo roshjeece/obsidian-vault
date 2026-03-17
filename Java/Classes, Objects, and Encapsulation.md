@@ -107,3 +107,12 @@ Don’t Do It!
 - Recompile when making changes
 - Compiler errors, don’t panic
 - Don’t assume program is perfect when all compiler errors are eliminated
+
+## Related
+- [[Programming Fundamentals and OOP Introduction]] — procedural vs OOP context that precedes this note
+- [[Methods, Overloading, and Classes]] — methods and constructors build directly on class fundamentals
+- [[Static Fields, Constructors, and this Keyword]] — extends encapsulation with static fields and constructor patterns
+- [[Inheritance]] — inheritance builds on the class/object model established here
+- [[Polymorphism]] — polymorphism requires understanding of classes and objects first
+- [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
+- [[Java Course]] — course overview

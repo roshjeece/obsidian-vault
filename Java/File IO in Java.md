@@ -215,3 +215,5 @@ class HourlyFull extends FullTime {
 ## Related
 - [[Java Course]] — course overview
 - [[Shell-Terminal-Command Line]] — file manipulation from terminal complements Java file I/O
+- [[Inheritance]] — the applied section uses a full Employee inheritance hierarchy
+- [[Polymorphism]] — toFileString() is polymorphically overridden across the Employee class hierarchy
