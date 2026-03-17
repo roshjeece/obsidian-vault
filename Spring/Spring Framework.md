@@ -396,3 +396,23 @@ If you can navigate to `http://localhost:8080/h2-console`, the app is running.
 - [[Polymorphism]] — Spring's dependency injection uses polymorphic references
 - [[SQL Course]] — Spring JPA maps Java objects to SQL database tables
 - [[To Do Study - Self Learning]] — todo app is a direct Spring Boot application
+---
+
+### Testing Layer Summary
+
+Each layer of the Spring stack has a corresponding test type. Knowing which to use and why is essential.
+
+| Layer | Annotation | What Gets Loaded | Mocks Needed |
+|---|---|---|---|
+| Controller | `@WebMvcTest` | Web layer only (no DB) | `@MockitoBean` for Service |
+| Service | `@ExtendWith(MockitoExtension.class)` | Nothing — pure unit test | `@Mock` for Repository |
+| Repository | `@DataJpaTest` | JPA + in-memory DB | None |
+| Full stack | `@SpringBootTest` | Entire application context | None (or selective) |
+
+**Key rules:**
+- `@WebMvcTest` — fast, tests HTTP request/response only. Always mock the service layer.
+- `@DataJpaTest` — spins up an embedded DB (H2 by default). Tests that queries and schema work correctly.
+- `@SpringBootTest` — slowest, most realistic. Use for integration tests that need the full context.
+- Mockito unit tests — fastest of all. No Spring context loaded at all.
+
+**Common mistake:** using `@SpringBootTest` for everything. It works but is slow and hides layer separation issues. Match the test type to the layer being tested.
