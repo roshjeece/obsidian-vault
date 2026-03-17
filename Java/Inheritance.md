@@ -133,7 +133,7 @@ public class Main {
 
 class Vehicle { // Superclass
 
-    protected void func1(){ // accessible to subclasses AND same package — not exclusively Car
+    protected void func1(){ // accessible to subclasses AND any class in the same package — not exclusively to Car
         System.out.print("func1 in Vehicle");
     }
 }
@@ -221,3 +221,15 @@ class Hybrid extends Car{
 - [[Polymorphism]] — method overriding and upcasting build directly on inheritance
 - [[Java Course]] — course overview
 - [[Spring Framework]] — Spring beans use inheritance and interface implementation patterns
+---
+
+## Access Modifiers
+
+| Modifier | Same Class | Same Package | Subclass | Everywhere |
+|---|---|---|---|---|
+| `public` | ✓ | ✓ | ✓ | ✓ |
+| `protected` | ✓ | ✓ | ✓ | ✗ |
+| *(none)* | ✓ | ✓ | ✗ | ✗ |
+| `private` | ✓ | ✗ | ✗ | ✗ |
+
+**Common pattern:** make fields `private`, expose them via `public` getters/setters. Use `protected` when a subclass needs direct access to a parent field without a getter.

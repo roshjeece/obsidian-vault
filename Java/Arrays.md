@@ -661,7 +661,7 @@ public class Main {
 }
 ```
 
-WIP: ur dumbass is misunderstanding the assignment
+WIP: Palindrome — revisit this implementation
 
 ```java
 Scanner input = new Scanner(System.in);
