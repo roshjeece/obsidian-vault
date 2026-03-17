@@ -19,5 +19,5 @@ How do we take a problem and break it down to smaller parts?
 ## Related
 - [[Beginning Web Programming]] — decomposition is the first concept in the web course
 - [[Intro Logistics-Decomposition-Github]] — decomposition introduced alongside Git and logistics
-- [[Java Day 1 - Programming Fundamentals]] — decomposition is a universal programming concept
+- [[Programming Fundamentals and OOP Introduction]] — decomposition is a universal programming concept
 - [[Introduction to TDD Arrange]] — TDD is a structured form of decomposition

@@ -17,7 +17,7 @@
 
 [[SQL Day 8]]
 
-[[11FEB26]]
+[[Increment Operators and While Loops]]
 
 [[Case Statements & more]]
 

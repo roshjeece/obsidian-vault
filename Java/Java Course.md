@@ -1,27 +1,27 @@
 ---
 
 ---
-[[Java Day 1 - Programming Fundamentals]]
+[[Programming Fundamentals and OOP Introduction]]
 
-[[Java Day 2 Notes]]
+[[Classes, Objects, and Encapsulation]]
 
-[[Java Day 3 Notes (Chapter 2)]]
+[[Variables, Data Types, and Scope]]
 
-[[Java Day 4]]
+[[Scanner, Methods, and Number Systems]]
 
-[[Java Day 5]]
+[[Methods, Overloading, and Classes]]
 
-[[Java Day 6]]
+[[Static Fields, Constructors, and this Keyword]]
 
-[[Java Day 7]]
+[[Conditionals, toString, and CPU Execution]]
 
-[[10FEB26 - Conditionals]]
+[[Conditionals and Switch Statements]]
 
 [[Notion/Code Notes Workspace/Java Course/11FEB26]]
 
-[[12FEB26]]
+[[Loop Practice and Binary Search]]
 
-[[Java - Loops - 17FEB26]]
+[[For Loops and Do-While Loops]]
 
 [[Arrays]]
 
@@ -39,7 +39,7 @@
 
 [[Polymorphism]]
 ## Related
-- [[Java Day 1 - Programming Fundamentals]] — course starting point
+- [[Programming Fundamentals and OOP Introduction]] — course starting point
 - [[Inheritance]] — core OOP topic
 - [[Polymorphism]] — core OOP topic
 - [[Recursion]] — advanced topic covered later in course
