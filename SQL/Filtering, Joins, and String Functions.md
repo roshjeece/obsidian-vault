@@ -82,4 +82,4 @@ GROUP BY customer_num;
 - [[Basic Queries and SQL Commands]] — basic SELECT syntax used here
 - [[Database Creation and Schema Design]] — full database creation builds on Day 4 queries
 - [[SQL Day 6.md]] — JOINs and views extend Day 4 concepts
-- [[SQL Course]] — course overview
+- [[_INDEX - SQL Course]] — course overview

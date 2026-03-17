@@ -361,5 +361,5 @@ woof
 - [[CSS]] — DOM manipulation can dynamically modify CSS styles
 - [[CSS - Bootstrap]] — Bootstrap components are targeted via DOM selectors
 - [[Web - Forms, Navigation, and DOM Basics]] — forms and DOM selectors used together
-- [[Beginning Web Programming]] — course overview
+- [[_INDEX - Beginning Web Programming]] — course overview
 - [[Spring Framework]] — DOM manipulation is the frontend counterpart to Spring REST endpoints

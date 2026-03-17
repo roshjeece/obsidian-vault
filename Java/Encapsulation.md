@@ -74,4 +74,4 @@ Each layer is encapsulated. The Controller has no idea how data is stored.
 - [[Polymorphism]] — encapsulation enables safe polymorphic substitution
 - [[Spring Framework]] — Spring's layered architecture is encapsulation at the system level
 - [[Introduction to TDD Arrange]] — encapsulated classes are easier to unit test
-- [[INDEX - Java Course]] — course overview
+- [[_INDEX - Java Course]] — course overview

@@ -78,5 +78,5 @@ New Git Information:
 - [[Decomposition]] — decomposition covered in this session
 - [[Git]] — Git introduced here in web course context
 - [[Git]] — detailed Git concepts
-- [[Beginning Web Programming]] — course overview
+- [[_INDEX - Beginning Web Programming]] — course overview
 - [[Final Project Contextualization]] — course roadmap referenced here

@@ -43,4 +43,4 @@
 - [[Spring Framework]] — Java is the foundation for Spring Boot development
 - [[Introduction to TDD Arrange]] — TDD practiced throughout this course
 - [[General Skills]] — Udemy Java complements this course
-- [[SQL Course]] — parallel course track
+- [[_INDEX - SQL Course]] — parallel course track

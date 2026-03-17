@@ -121,7 +121,7 @@ erDiagram
 
 ```
 ## Related
-- [[SQL Course]] — course overview
+- [[_INDEX - SQL Course]] — course overview
 - [[Keys, Relationships, and Constraints]] — builds on Day 1 with keys and relationships
 - [[Basic Queries and SQL Commands]] — applies Day 1 concepts with SELECT queries
 - [[Spring JPA Overview - Annotations]] — JPA maps Java classes to SQL tables and datatypes

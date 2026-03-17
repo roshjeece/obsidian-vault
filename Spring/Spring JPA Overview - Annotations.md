@@ -54,6 +54,6 @@ datasource:
 ```
 ## Related
 - [[Spring Framework]] — JPA is the persistence layer of the Spring stack
-- [[SQL Course]] — JPA generates SQL under the hood via Hibernate
+- [[_INDEX - SQL Course]] — JPA generates SQL under the hood via Hibernate
 - [[Introduction to TDD Arrange]] — @DataJpaTest is the test type for the repository layer
 - [[Basic Queries and SQL Commands]] — understanding raw SQL helps understand what JPA generates

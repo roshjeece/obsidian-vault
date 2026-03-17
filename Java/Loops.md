@@ -197,7 +197,7 @@ public class Main {
 ```
 
 ## Related
-- [[INDEX - Java Course]] — loops are a core Java concept covered early in the course
+- [[_INDEX - Java Course]] — loops are a core Java concept covered early in the course
 - [[Conditionals and Switch Statements]] — conditionals and loops are taught together; while loops depend on boolean conditions
 - [[Recursion]] — recursion is an alternative to loops for repeated operations
 - [[Variables, Data Types, and Scope]] — foundational Java concepts that precede loops

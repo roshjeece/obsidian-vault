@@ -815,7 +815,7 @@ jshell> {
 6.666666666666667
 ```
 ## Related
-- [[INDEX - Java Course]] — formal Java course to cross-reference with Udemy content
+- [[_INDEX - Java Course]] — formal Java course to cross-reference with Udemy content
 - [[General Skills]] — parent note
 - [[Inheritance]] — OOP concepts covered in both formal and self-study tracks
 - [[Polymorphism]] — OOP concepts covered in both formal and self-study tracks

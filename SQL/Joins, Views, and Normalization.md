@@ -202,4 +202,4 @@ SQL - Day 6 - Queries, Joins, and Designing Data Structure, Normalization of Dat
 - [[Basic Queries and SQL Commands]] — JOIN types referenced here
 - [[Final Project Part 1 Code Space]] — complex multi-table joins applied in project
 - [[Spring JPA Overview - Annotations]] — Spring JPA performs equivalent joins via entity relationships
-- [[SQL Course]] — course overview
+- [[_INDEX - SQL Course]] — course overview

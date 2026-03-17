@@ -73,7 +73,7 @@ public class RecursiveFibonacci {
 
 ## Related
 - [[Sorting Algorithms]] — recursion is the foundation of merge sort and quicksort
-- [[INDEX - Java Course]] — course overview
+- [[_INDEX - Java Course]] — course overview
 ## Practice
 
 **Add Digits** — take an integer and recursively add its digits together

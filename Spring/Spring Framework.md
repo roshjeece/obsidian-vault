@@ -394,7 +394,7 @@ If you can navigate to `http://localhost:8080/h2-console`, the app is running.
 - [[Introduction to TDD Arrange]] — controller, service, and repository layers each have a corresponding test type
 - [[Inheritance]] — Spring relies heavily on interface implementation and class hierarchies
 - [[Polymorphism]] — Spring's dependency injection uses polymorphic references
-- [[SQL Course]] — Spring JPA maps Java objects to SQL database tables
+- [[_INDEX - SQL Course]] — Spring JPA maps Java objects to SQL database tables
 - [[To Do Study - Self Learning]] — todo app is a direct Spring Boot application
 ---
 

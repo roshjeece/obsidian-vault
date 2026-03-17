@@ -150,5 +150,5 @@ Now we found something that might work:
 - [[CSS]] — Bootstrap extends raw CSS
 - [[JavaScript - DOM]] — Bootstrap components are manipulated via DOM
 - [[Final Project Contextualization]] — Bootstrap used in final project frontend
-- [[Beginning Web Programming]] — course overview
+- [[_INDEX - Beginning Web Programming]] — course overview
 - [[Spring Framework]] — Bootstrap frontend pairs with Spring Boot backend in full-stack projects

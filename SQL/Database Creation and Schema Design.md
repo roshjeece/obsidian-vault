@@ -84,4 +84,4 @@ CREATE TABLE order_items (
 - [[SQL Day 6.md]] — JOINs and views query this database
 - [[Basic Queries and SQL Commands]] — DDL commands used to build this schema
 - [[Spring JPA Overview - Annotations]] — Spring generates equivalent schema via Flyway migrations
-- [[SQL Course]] — course overview
+- [[_INDEX - SQL Course]] — course overview

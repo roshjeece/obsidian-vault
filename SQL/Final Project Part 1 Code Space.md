@@ -203,4 +203,4 @@ LIMIT 5;
 - [[Database Creation and Schema Design]] — schema design referenced in table creation
 - [[Spring JPA Overview - Annotations]] — Spring JPA performs equivalent operations in Java
 - [[Spring Framework]] — this project's schema is the type Spring Boot would sit on top of
-- [[SQL Course]] — course overview
+- [[_INDEX - SQL Course]] — course overview

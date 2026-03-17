@@ -60,4 +60,4 @@ Code & Presentation
 - [[JavaScript - DOM]] — DOM manipulation needed for dynamic UI
 - [[Database Creation and Schema Design]] — PostgreSQL schema design needed for two joined tables
 - [[Introduction to TDD Arrange]] — TDD applies to full-stack project testing
-- [[Beginning Web Programming]] — course overview
+- [[_INDEX - Beginning Web Programming]] — course overview
