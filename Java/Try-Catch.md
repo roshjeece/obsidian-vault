@@ -241,3 +241,4 @@ public class Main {
     }  
 }
 ```
+Output: Exception in thread "main" Main$MyException: This is my exception
