@@ -21,7 +21,7 @@
 
 [[Loop Practice and Binary Search]]
 
-[[For Loops and Do-While Loops]]
+[[Loops]]
 
 [[Arrays]]
 
