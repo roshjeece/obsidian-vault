@@ -190,4 +190,36 @@ See more: https://rollbar.com/blog/java-exceptions-hierarchy-explained/
 - Errors you generally cannot handle
 
 
-Unchecked exception (you can check or it y)
+Unchecked exception (you can check or choose not to)
+
+
+##### Catching Hierarchy
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+        try {  
+            func1();  
+        } catch (Exception e) {  
+            System.out.println("catch it parent");  
+        }  
+  
+    }  
+  
+    public static void func1() {  
+        try {  
+            func2();  
+        } catch(Exception e) {  
+            System.out.println("by func1");  
+        }  
+  
+    }  
+  
+    public static void func2(){  
+        int x = 3;  
+        int y = 0;  
+        int z = x / y;  
+    }  
+}
+```
+Output: "by func1"
+
