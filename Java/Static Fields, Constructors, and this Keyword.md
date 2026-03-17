@@ -213,11 +213,11 @@ Overloading
 - Using one term to indicate diverse meanings
 - Writing multiple methods with the same name but with different arguments
 - The compiler understands the meaning based on the arguments used with the method call
-- It is convenient for…
+- It is convenient for reducing the number of method names needed — one name handles multiple input types or argument counts.
 
 Automatic Type Promotion in Method Calls
 
-- If an application contains
+- If an application contains a method call where the argument type does not exactly match the parameter type, Java automatically promotes the smaller type to the larger compatible type (e.g., int → double) before passing it.
 
 Learning About the ‘this’ Reference
 
@@ -234,7 +234,7 @@ Static Fields
 
 Using AutomaticallyImported, Prewritten Constants and Methods
 
-- Many classes are commonly used by a wide variety
+- Many classes are commonly used across an entire application and are imported automatically by Java (e.g., String, System, Math) without needing an explicit import statement.
 
 Composition
 
@@ -256,4 +256,4 @@ UML — Class Relationships:
 - Aggregation
 - Composition
 
-Elegant, simple solution that is 
+Elegant, simple solution that is achieved by using constructor chaining with this() — delegating from simpler constructors to the most complete one, avoiding duplicated initialization logic. 

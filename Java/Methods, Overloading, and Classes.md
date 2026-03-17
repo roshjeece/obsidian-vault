@@ -80,10 +80,19 @@ Arguments:
 - Data items you use in a call to a method
 
 Parameters:
+- Named variables in the method signature that receive the argument values
+- Defined in the method header: `private static void sum(int a, int b)`
+- `a` and `b` are parameters
 
 Implementation hiding:
+- The internal logic of a method is hidden from the caller
+- The caller only needs to know what the method does, not how it does it
+- This is encapsulation applied to methods
 
-Local Variable
+Local Variable:
+- A variable declared inside a method
+- Only accessible within that method — not visible outside it
+- Destroyed when the method returns
 
 
 Passing Values
