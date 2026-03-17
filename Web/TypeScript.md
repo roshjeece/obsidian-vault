@@ -9,3 +9,9 @@ Node-based application
 
 Build a node application using TS => DO NOT use the -g
 
+
+## Related
+- [[JavaScript]] — TypeScript is a typed superset of JavaScript
+- [[JavaScript - Strings, Arrays, Objects]] — JS fundamentals apply in TypeScript
+- [[Beginning Web Programming]] — course overview
+- [[Spring Framework]] — TypeScript frontend pairs with Spring Boot backend

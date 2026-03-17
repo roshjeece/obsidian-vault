@@ -93,3 +93,9 @@ public class Main {
 }
 
 ```
+## Related
+- [[Loops]] — loop practice builds directly on while and for loop fundamentals
+- [[Arrays]] — binary search operates on sorted arrays
+- [[Sorting Algorithms]] — binary search requires a sorted array; pairs with sort algorithms
+- [[Conditionals and Switch Statements]] — input validation uses conditional logic
+- [[Java Course]] — course overview
