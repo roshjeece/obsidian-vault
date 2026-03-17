@@ -18,7 +18,7 @@
 | 6 | [[JavaScript - Strings, Arrays, Objects]] | String methods, array manipulation, filter, map, forEach, fat arrows |
 | 7 | [[JavaScript - DOM]] | DOM selectors, events, innerHTML, forms, objects |
 | 8 | [[CSS - Bootstrap]] | Grid system, components, responsive design, consuming APIs |
-| 9 | [[25FEB26]] | Anchor tags, forms, DOM navigation, DRY coding |
+| 9 | [[Web - Forms, Navigation, and DOM Basics]] | Anchor tags, forms, DOM navigation, DRY coding |
 | 10 | [[TypeScript]] | Node setup, package.json, npm, importing modules |
 | 11 | [[Final Project Contextualization]] | Full-stack CRUD capstone — React, MUI, Spring Boot, PostgreSQL |
 
