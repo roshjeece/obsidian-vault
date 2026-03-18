@@ -147,6 +147,8 @@ node build/index.js   # runs the compiled output
 
 > Use `npx tsc` rather than a global `tsc` command so the project uses its own locally installed TypeScript version, avoiding conflicts between projects.
 
+>`npx tsc` is used to run the TypeScript compiler (`tsc`) from your local node_modules without requiring a global installation. It compiles your TypeScript (`)
+
 ---
 
 ## Tips
