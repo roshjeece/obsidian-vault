@@ -15,3 +15,4 @@ Thumbs.db
 
 # Ignore Smart Environment folder
 .smart-env.gitattributes
+.smart-env/
