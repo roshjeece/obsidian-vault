@@ -63,7 +63,6 @@
     - number of rows to extract
 ## Related
 - [[Keys, Relationships, and Constraints]] — keys and relationships that queries operate on
-- [[_INDEX - SQL Course]] — course overview
 - [[Filtering, Joins, and String Functions]] — applies basic queries with JOINs and filters
 - [[Spring JPA Overview - Annotations]] — Spring Data generates DDL and DML automatically
 - [[Final Project Part 1 Code Space]] — SELECT, JOIN, and aggregate queries used throughout

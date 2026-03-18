@@ -217,10 +217,7 @@ class Hybrid extends Car{
 // Output: false
 ```
 
-## Related
-- [[Polymorphism]] — method overriding and upcasting build directly on inheritance
-- [[_INDEX - Java Course]] — course overview
-- [[Spring Framework]] — Spring beans use inheritance and interface implementation patterns
+
 ---
 
 ## Access Modifiers
@@ -233,3 +230,10 @@ class Hybrid extends Car{
 | `private` | ✓ | ✗ | ✗ | ✗ |
 
 **Common pattern:** make fields `private`, expose them via `public` getters/setters. Use `protected` when a subclass needs direct access to a parent field without a getter.
+
+---
+
+## Related
+- [[Polymorphism]] — method overriding and upcasting build directly on inheritance
+- [[Spring Framework]] — Spring beans use inheritance and interface implementation patterns
+- [[Exceptions and Error Handling]] — exception hierarchy is a direct application of inheritance; child exception catches must come before parent catches

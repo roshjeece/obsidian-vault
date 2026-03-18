@@ -108,6 +108,8 @@ Don’t Do It!
 - Compiler errors, don’t panic
 - Don’t assume program is perfect when all compiler errors are eliminated
 
+---
+
 ## Related
 - [[Programming Fundamentals and OOP Introduction]] — procedural vs OOP context that precedes this note
 - [[Methods, Overloading, and Classes]] — methods and constructors build directly on class fundamentals
@@ -115,4 +117,3 @@ Don’t Do It!
 - [[Inheritance]] — inheritance builds on the class/object model established here
 - [[Polymorphism]] — polymorphism requires understanding of classes and objects first
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
-- [[_INDEX - Java Course]] — course overview

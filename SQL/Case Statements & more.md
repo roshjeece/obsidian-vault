@@ -61,4 +61,3 @@ See: [PostgreSQL CHECK Constraints](https://neon.com/postgresql/postgresql-tutor
 - [[PLSQL and CASE Functions]] — same week, related SQL concepts
 - [[Basic Queries and SQL Commands]] — foundational SQL syntax
 - [[Final Project Part 1 Code Space]] — conditional logic applied in project queries
-- [[_INDEX - SQL Course]] — course overview

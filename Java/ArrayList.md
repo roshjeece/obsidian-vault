@@ -171,8 +171,10 @@ public class Student implements Comparable<Student>{
 ```
 
 **arrayList.add inserts at the index specified and then shifts everything right!**
+
+---
+
 ## Related
 - [[Arrays]] — ArrayList is the dynamic alternative to fixed arrays
 - [[Sorting Algorithms]] — ArrayLists can be sorted using Collections utility
-- [[_INDEX - Java Course]] — course overview
 - [[Spring Framework]] — Spring repositories return Lists of entities

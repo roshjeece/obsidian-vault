@@ -338,4 +338,3 @@ I am back!
 - [[Loops]] — Scanner is used extensively in loop exercises
 - [[Variables, Data Types, and Scope]] — data types and casting covered here apply to Scanner input
 - [[Methods, Overloading, and Classes]] — methods introduced in this note are extended next
-- [[_INDEX - Java Course]] — course overview

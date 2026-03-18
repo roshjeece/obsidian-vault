@@ -147,4 +147,3 @@ newArray[i + j] = (arr1[i] < arr2[j]) ? arr1[i++] : arr2[j++];
 - [[Variables, Data Types, and Scope]] — boolean conditions rely on correct data types
 - [[Conditionals, toString, and CPU Execution]] — if/else extended with sequential execution examples
 - [[Introduction to TDD Arrange]] — conditionals are tested using assertTrue/assertFalse
-- [[_INDEX - Java Course]] — course overview

@@ -704,7 +704,10 @@ public class Main {
     }
 }
 ```
+
+---
+
 ## Related
 - [[Sorting Algorithms]] — sorting algorithms operate on arrays
 - [[ArrayList]] — ArrayList is the dynamic alternative to fixed arrays
-- [[_INDEX - Java Course]] — course overview
+- [[Exceptions and Error Handling]] — array operations are a primary source of runtime exceptions (ArrayIndexOutOfBoundsException, NullPointerException)

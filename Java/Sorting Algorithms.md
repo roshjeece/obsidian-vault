@@ -33,11 +33,8 @@ public class Main {
 
 ```
 
-## Related
-- [[Recursion]] — many sorting algorithms use recursive logic
-- [[Sorting Algorithms]] — merge sort is a direct application of sorting algorithm concepts
-- [[Arrays]] — sorting operates on arrays
-- [[_INDEX - Java Course]] — course overview
+
+
 ---
 
 ## Merge Sort
@@ -88,3 +85,9 @@ Key concepts: two-pointer technique, draining remaining elements, ternary operat
 | Bubble Sort | O(n²) | O(1) | Learning only |
 | Merge Sort | O(n log n) | O(n) | Large datasets |
 
+---
+
+## Related
+- [[Recursion]] — many sorting algorithms use recursive logic
+- [[Sorting Algorithms]] — merge sort is a direct application of sorting algorithm concepts
+- [[Arrays]] — sorting operates on arrays

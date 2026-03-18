@@ -196,13 +196,7 @@ public class Main {
 
 ```
 
-## Related
-- [[_INDEX - Java Course]] — loops are a core Java concept covered early in the course
-- [[Conditionals and Switch Statements]] — conditionals and loops are taught together; while loops depend on boolean conditions
-- [[Recursion]] — recursion is an alternative to loops for repeated operations
-- [[Variables, Data Types, and Scope]] — foundational Java concepts that precede loops
-- [[Sorting Algorithms]] — bubble sort uses nested loops as its core mechanism
-- [[udemy Java]] — loops covered in Udemy self-study track as well---
+
 
 ---
 Sum input of numbers together:
@@ -424,3 +418,13 @@ public class Main {
 }
 // Output: 0, 1, 2, 4, 5
 ```
+
+---
+
+## Related
+- [[_INDEX - Java Course]] — loops are a core Java concept covered early in the course
+- [[Conditionals and Switch Statements]] — conditionals and loops are taught together; while loops depend on boolean conditions
+- [[Recursion]] — recursion is an alternative to loops for repeated operations
+- [[Variables, Data Types, and Scope]] — foundational Java concepts that precede loops
+- [[Sorting Algorithms]] — bubble sort uses nested loops as its core mechanism
+- [[udemy Java]] — loops covered in Udemy self-study track as well
