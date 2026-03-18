@@ -147,9 +147,60 @@ node build/index.js   # runs the compiled output
 
 > Use `npx tsc` rather than a global `tsc` command so the project uses its own locally installed TypeScript version, avoiding conflicts between projects.
 
->`npx tsc` is used to run the TypeScript compiler (`tsc`) from your local node_modules without requiring a global installation. It compiles your TypeScript (`)
+>`npx tsc` is used to run the TypeScript compiler (`tsc`) from your local node_modules without requiring a global installation. It compiles your TypeScript (`.ts`) files into JavaScript(`.js`), which can then be run in web browsers or Node.js environments.
 
 ---
+## More Practice:
+```TypeScript
+// monsterTypes.ts
+export interface Monster {  
+    firstName: string; // Every monster needs a name  
+    lastName?: string; // ? means optional, prevents compiler error if not added
+    age: number; // Every monster has an age  
+    type: "Human" | "Blob" | "Undead"; // choose a type  
+    moreInfo: string; // Fun fact about the monster  
+}
+```
+```TypeScript
+// index.ts
+import {Monster} from "./models/monsterTypes"  
+  
+const monster1: Monster = {  
+    firstName: "Junie",  
+    age: 500,  
+    type: "Undead",  
+    moreInfo: "Vietnam Veteran with PTSD"  
+}  
+  
+const monster2: Monster = {  
+    firstName: "Blobbo",  
+    age: 420,  
+    type: "Blob",  
+    moreInfo: "Absorbs everything in sight, endlessly hungry, unpredictable"  
+}  
+  
+const monster3: Monster = {  
+    firstName: "Alice",  
+    age: 28,  
+    type: "Human",  
+    moreInfo: "Monster Hunter"  
+}  
+  
+console.log(monster1)  
+console.log(monster2)  
+console.log(monster3)
+```
+
+Key Takeaways:
+- "Interface" is an easy and powerful way to define a "contract" for an object in TS
+- `?` makes a property **optional**
+- You cannot concatenate objects normally
+---
+## Extend Interfaces
+- Interfaces are ex
+
+---
+
 
 ## Tips
 - Follow install instructions on [npmjs.com](https://www.npmjs.com/) for any new packages
@@ -165,3 +216,4 @@ node build/index.js   # runs the compiled output
 - [[React]] — React projects commonly use TypeScript for prop and state typing; same tsconfig/npm workflow applies
 - [[Web - Forms, Navigation, and DOM Basics]] — TS enforces types on form input values and event handlers
 - [[Git]] — version control workflow applies when setting up TS projects; `.gitignore` should exclude `build/` and `node_modules/`
+
