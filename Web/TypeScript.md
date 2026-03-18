@@ -191,16 +191,41 @@ console.log(monster2)
 console.log(monster3)
 ```
 
-Key Takeaways:
-- "Interface" is an easy and powerful way to define a "contract" for an object in TS
-- `?` makes a property **optional**
-- You cannot concatenate objects normally
+>Key Takeaways:
+>- "Interface" is an easy and powerful way to define a "contract" for an object in TS
+>- `?` makes a property **optional**
+>- You cannot concatenate objects normally
 ---
 ## Extend Interfaces
-- Interfaces are ex
+```TypeScript
+// monsterTypes.ts
+export interface Monster {  
+    firstName: string; // Every monster needs a name  
+    lastName?: string; // ? means optional, prevents compiler error if not added
+    age: number; // Every monster has an age  
+    type: "Human" | "Blob" | "Undead"; // choose a type  
+    moreInfo: string; // Fun fact about the monster  
+}
 
+export interface SuperMonster extends Monster {
+	powerLevel: number;
+}
+```
+```TypeScript
+// index.ts
+import {Monster, SuperMonster} from "./models/monsterTypes"
+[...]
+const monster4: SuperMonster = {  
+    firstName: "Alucard",  
+    age: 1000,  
+    type: "Undead",  
+    moreInfo: "aka: Adrian Tepes, son of Dracula",  
+    powerLevel: 100  
+}
+```
+
+> Note: extends the same way you would a Java object. Pay attention to the way you export and import
 ---
-
 
 ## Tips
 - Follow install instructions on [npmjs.com](https://www.npmjs.com/) for any new packages
