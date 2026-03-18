@@ -200,5 +200,4 @@ Pattern Attribute:
 ## Related
 - [[JavaScript - DOM]] — DOM selectors and events covered this session
 - [[CSS]] — classes and IDs referenced in styling
-- [[_INDEX - Beginning Web Programming]] — course overview
 - [[Intro Logistics-Decomposition-Github]] — navigation and forms introduced early in course

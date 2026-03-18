@@ -65,4 +65,3 @@ function MyForm() {
 - [[TypeScript]] — React can be written in TypeScript
 - [[Spring Framework]] — React frontend pairs with Spring Boot backend in the capstone
 - [[Final Project Contextualization]] — capstone requires React + MUI
-- [[_INDEX - Beginning Web Programming]] — course overview

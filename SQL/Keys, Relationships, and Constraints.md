@@ -61,7 +61,6 @@ Database system: organization of components that define and regulate the collect
 
 ## Related
 - [[Foundations, Datatypes, and ERD]] — foundational concepts
-- [[_INDEX - SQL Course]] — course overview
 - [[Basic Queries and SQL Commands]] — applies keys and relationships in SELECT queries
 - [[Final Project Part 1 Code Space]] — foreign keys and referential integrity applied in project
 - [[Spring JPA Overview - Annotations]] — @Entity and @Id map directly to primary keys

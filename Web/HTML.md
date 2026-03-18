@@ -107,4 +107,3 @@ ul>li*3             → <ul><li></li><li></li><li></li></ul>
 - [[CSS - Bootstrap]] — Bootstrap provides pre-built HTML component patterns
 - [[Web - Forms, Navigation, and DOM Basics]] — anchor tags, forms, and navigation covered here
 - [[Intro Logistics-Decomposition-Github]] — HTML structure introduced in first web class
-- [[_INDEX - Beginning Web Programming]] — course overview

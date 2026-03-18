@@ -299,4 +299,3 @@ let square = (num, age) => {
 - [[JavaScript]] — foundational JS concepts
 - [[JavaScript - DOM]] — DOM manipulation uses arrays and objects heavily
 - [[Arrays]] — Java arrays parallel JavaScript array methods covered here
-- [[_INDEX - Beginning Web Programming]] — course overview
