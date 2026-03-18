@@ -199,5 +199,5 @@ Pattern Attribute:
 
 ## Related
 - [[JavaScript - DOM]] — DOM selectors and events covered this session
-- [[CSS]] — classes and IDs referenced in styling
+- [[CSS - Introduction]] — classes and IDs referenced in styling
 - [[Intro Logistics-Decomposition-Github]] — navigation and forms introduced early in course

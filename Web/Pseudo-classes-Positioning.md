@@ -32,5 +32,5 @@ input: focus {
 							}
 ```
 ## Related
-- [[CSS]] — pseudo-classes are an extension of core CSS
+- [[CSS - Introduction]] — pseudo-classes are an extension of core CSS
 - [[CSS - Bootstrap]] — Bootstrap uses pseudo-classes internally

@@ -235,10 +235,10 @@ const monster4: SuperMonster = {
 ---
 
 ## Related
-- [[JavaScript]] — TypeScript is a typed superset of JS; understanding JS syntax and behavior is prerequisite knowledge
+- [[JavaScript - Introduction]] — TypeScript is a typed superset of JS; understanding JS syntax and behavior is prerequisite knowledge
 - [[JavaScript - Strings, Arrays, Objects]] — arrays and string templating shown in TS examples directly mirror JS syntax with added type annotations
 - [[JavaScript - DOM]] — DOM manipulation in TS follows same patterns but benefits from typed element references
 - [[React]] — React projects commonly use TypeScript for prop and state typing; same tsconfig/npm workflow applies
-- [[Web - Forms, Navigation, and DOM Basics]] — TS enforces types on form input values and event handlers
+- [[Forms, Navigation, and DOM Basics]] — TS enforces types on form input values and event handlers
 - [[Git]] — version control workflow applies when setting up TS projects; `.gitignore` should exclude `build/` and `node_modules/`
 

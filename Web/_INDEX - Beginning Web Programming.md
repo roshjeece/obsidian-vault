@@ -12,13 +12,13 @@
 |---|---|---|
 | 1 | [[Intro Logistics-Decomposition-Github]] | Course layout, decomposition, Git vs GitHub, .gitignore |
 | 2 | [[Decomposition]] | Problem decomposition, algorithms, pseudocode |
-| 3 | [[CSS]] | Selectors, specificity, inline/internal/external, Google Fonts |
+| 3 | [[CSS - Introduction]] | Selectors, specificity, inline/internal/external, Google Fonts |
 | 4 | [[Pseudo-classes-Positioning]] | :hover, :focus, pseudo-class syntax |
-| 5 | [[JavaScript]] | Variables, scope, type coercion, template literals, ternary |
+| 5 | [[JavaScript - Introduction]] | Variables, scope, type coercion, template literals, ternary |
 | 6 | [[JavaScript - Strings, Arrays, Objects]] | String methods, array manipulation, filter, map, forEach, fat arrows |
 | 7 | [[JavaScript - DOM]] | DOM selectors, events, innerHTML, forms, objects |
 | 8 | [[CSS - Bootstrap]] | Grid system, components, responsive design, consuming APIs |
-| 9 | [[Web - Forms, Navigation, and DOM Basics]] | Anchor tags, forms, DOM navigation, DRY coding |
+| 9 | [[Forms, Navigation, and DOM Basics]] | Anchor tags, forms, DOM navigation, DRY coding |
 | 10 | [[TypeScript]] | Node setup, package.json, npm, importing modules |
 | 11 | [[Final Project Contextualization]] | Full-stack CRUD capstone — React, MUI, Spring Boot, PostgreSQL |
 

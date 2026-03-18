@@ -59,7 +59,7 @@ function MyForm() {
 ---
 
 ## Related
-- [[JavaScript]] — React is built on JavaScript fundamentals
+- [[JavaScript - Introduction]] — React is built on JavaScript fundamentals
 - [[JavaScript - Strings, Arrays, Objects]] — arrays and objects are used heavily in React state
 - [[JavaScript - DOM]] — React abstracts the DOM but understanding it helps
 - [[TypeScript]] — React can be written in TypeScript
