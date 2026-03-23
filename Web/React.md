@@ -89,6 +89,13 @@ export default App;
 ## Data Flow
 For right now, data can only flow down from parent to child (for now), for the purposes of this class
 
+---
+
+## Setting Up React Application:
+
+1. `npm create vite `
+
+
 ## Related
 - [[JavaScript - Introduction]] — React is built on JavaScript fundamentals
 - [[JavaScript - Strings, Arrays, Objects]] — arrays and objects are used heavily in React state
