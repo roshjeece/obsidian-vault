@@ -226,6 +226,3 @@ Spring's ApplicationContext creates all the objects (`@RestController`, `@Servic
 - [[Spring Boot - Annotations Reference]] — what every @ symbol in this chain means
 - [[Spring JPA Overview - Annotations]] — existing JPA annotation reference
 
-## Suggested Backlinks
-- Add [[Spring Boot - The Request Lifecycle]] to [[Spring Framework]] — the lifecycle is the most concrete expression of how Spring works in practice
-- Add [[Spring Boot - The Request Lifecycle]] to [[Spring JPA Overview - Annotations]] — lifecycle shows when and why JPA annotations activate

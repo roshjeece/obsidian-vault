@@ -117,3 +117,4 @@ Don’t Do It!
 - [[Inheritance]] — inheritance builds on the class/object model established here
 - [[Polymorphism]] — polymorphism requires understanding of classes and objects first
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
+- [[Spring Boot - Services]] — the service layer is encapsulation applied at architecture scale

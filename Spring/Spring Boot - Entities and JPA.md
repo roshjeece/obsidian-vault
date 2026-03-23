@@ -196,7 +196,5 @@ Your entity and your Flyway migration must stay in sync manually. If you add a f
 - [[Spring JPA Overview - Annotations]] — existing JPA annotation reference
 - [[SQL/Keys, Relationships, and Constraints]] — the SQL side of the foreign key this entity defines
 - [[SQL/Database Creation and Schema Design]] — how the schema in V1__init.sql was designed
+- 
 
-## Suggested Backlinks
-- Add [[Spring Boot - Entities and JPA]] to [[Flyway]] — the entity and the migration file must stay in sync; both notes are incomplete without referencing the other
-- Add [[Spring Boot - Entities and JPA]] to [[SQL/Keys, Relationships, and Constraints]] — the `@ManyToOne` annotation is the Java representation of what that SQL note covers

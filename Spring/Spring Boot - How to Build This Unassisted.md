@@ -304,6 +304,3 @@ When something breaks, walk the chain in this order:
 - [[Flyway]] — step 3 in detail
 - [[TDD/Introduction to TDD Arrange]] — why tests come first
 
-## Suggested Backlinks
-- Add [[Spring Boot - How to Build This Unassisted]] to [[Spring Framework]] — the unassisted checklist is the practical culmination of everything in the Spring Framework overview
-- Add [[Spring Boot - How to Build This Unassisted]] to [[Flyway]] — the migration step in the checklist directly extends the Flyway note

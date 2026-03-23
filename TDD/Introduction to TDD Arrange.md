@@ -424,3 +424,7 @@ See more: [Agile Manifesto](https://agilemanifesto.org/iso/en/principles.html)
 - [[_INDEX - Java Course]] — TDD is practiced throughout the Java curriculum
 - [[Git]] — TDD cycle pairs with frequent commits: red, green, refactor, commit
 - [[To Do Study - Self Learning]] — todo app is a direct TDD application
+- [[Spring Boot - Testing Strategy]] — concrete Spring implementation of the TDD concepts in that note
+- [[Spring Boot - Annotations Reference]] — test annotations are the implementation of TDD concepts
+- [[Spring Boot - Controllers and REST]] — the controller TODO pattern (write test first, then implement) is direct TDD application
+- [[Spring Boot - Services]] — service tests are the primary target for unit testing with mocks

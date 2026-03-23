@@ -169,6 +169,3 @@ TaskRepository  →  SimpleJpaRepository<Task, Long>
 - [[SQL/Basic Queries and SQL Commands]] — the SQL that derived query methods generate
 - [[SQL/Filtering, Joins, and String Functions]] — the SQL concepts behind `findBy`, `Containing`, etc.
 
-## Suggested Backlinks
-- Add [[Spring Boot - Repositories and Queries]] to [[SQL/Basic Queries and SQL Commands]] — derived query methods are the Java abstraction over the SQL concepts in that note
-- Add [[Spring Boot - Repositories and Queries]] to [[Spring JPA Overview - Annotations]] — repositories are the primary consumer of JPA annotations

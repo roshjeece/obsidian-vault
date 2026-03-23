@@ -1,59 +1,296 @@
 ---
 
 ---
-Learning Objectives:
+# Spring JPA Overview - Annotations
 
-- Understand Spring JPA and Hibernate
-- Hibernate (ORM)
-- How do we use Spring JPA?
-- Jackson Serialization
-- What are the relevant Spring annotations for Spring JPA
-- Application.yaml
+BLUF: JPA is the specification that defines how Java objects map to database tables. Hibernate is the library that implements it. Together they eliminate the need to write raw JDBC code — you define the mapping with annotations and call `repository.save(entity)` instead of writing `PreparedStatement` and `ResultSet` by hand.
 
-Annotations:
+---
 
-- `@Repository`
-- `@Entity`
-- `@Table`
-- `@GeneratedValue`
-- `@Column`
-- What is Flyway? (generates SQL for us)
-- What is a migration?
+## The Stack: JPA, Hibernate, and JDBC
 
-No persistence of any kind without a JPA
-
-Jakarta Persistence API (**JPA**)
-
-- Specification that defines a common API for Object Relational Mapper (**ORM**) frameworks like Hibernate
-
-Object Relational Mapper (ORM)
-
-- Apps depend on the ability to read/write data to a db for almost all functionality. ORMs significantly decrease the complexity of managing records in the db
-- Enable you to:
-    - Define relationships between tables **in your classes** themselves
-    - Update multiple tables and query tables in one command
-
-Spring Jakarta Persistence API:
-
-- How do you access this JPA capability?
-    - Add the JPA dependency in build.gradle
-- With an existing database connection, update the application.yaml
-- Here are some of the relevant Spring annotations for Spring JPA:
-    - `@Entity`
-    - `@Id`
-    - `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-    - `@Repository`
-
-How does adding dependencies like JPA, to an existing Spring Boot project, reduce boilerplate?
-
-
-```markdown
-datasource:
-	url: jdbc:postgresql://localhost:543*/aircraft
-	driver-class-name: org.postgresql.Driver
 ```
+Your Java Code (@Entity, @Repository)
+        │
+        ▼
+JPA (Jakarta Persistence API)
+— the specification: defines the rules and annotations
+        │
+        ▼
+Hibernate
+— the implementation: follows JPA's rules, generates SQL
+        │
+        ▼
+JDBC (Java Database Connectivity)
+— raw database connection layer
+        │
+        ▼
+PostgreSQL
+```
+
+**JPA is not a library you download — it's a set of rules.** Hibernate is the engine that follows those rules. When you add `spring-boot-starter-data-jpa` to `build.gradle`, you get Hibernate under the hood automatically.
+
+---
+
+## Why JPA Exists: What It Replaces
+
+Without JPA, reading a task from the database looks like this:
+
+```java
+// Raw JDBC — what JPA replaces
+Connection conn = DriverManager.getConnection(url, user, password);
+PreparedStatement stmt = conn.prepareStatement("SELECT * FROM task WHERE id = ?");
+stmt.setLong(1, id);
+ResultSet rs = stmt.executeQuery();
+
+Task task = new Task();
+task.setId(rs.getLong("id"));
+task.setTitle(rs.getString("title"));
+task.setDescription(rs.getString("description"));
+task.setIsComplete(rs.getBoolean("is_complete"));
+// ... repeat for every column, every query, every entity
+```
+
+With JPA:
+
+```java
+// With JPA — what you actually write
+taskRepository.findById(id);
+```
+
+JPA eliminates the boilerplate of opening connections, writing SQL strings, mapping result sets to objects, and closing connections. The tradeoff is that you need to understand what it's doing under the hood — especially when things go wrong.
+
+---
+
+## ORM: Object Relational Mapping
+
+An ORM maps between two different worlds:
+
+|Java (Object world)|SQL (Relational world)|
+|---|---|
+|Class|Table|
+|Field|Column|
+|Object instance|Row|
+|Reference (`task.category`)|Foreign key (`category_id`)|
+|`List<Task>`|Result set of multiple rows|
+
+Hibernate handles the translation automatically based on your annotations. When you call `taskRepository.save(task)`, Hibernate inspects the `Task` object, determines which table it maps to, and generates the appropriate `INSERT` or `UPDATE` SQL.
+
+---
+
+## Entity Annotations
+
+### `@Entity`
+
+```java
+@Entity
+public class Task { ... }
+```
+
+Registers this class with JPA. Hibernate now knows this class represents rows in a database table. Required on every class that maps to a table.
+
+### `@Table`
+
+```java
+@Entity
+@Table(name = "category")
+public class Category { ... }
+```
+
+Specifies the exact table name. If omitted, JPA uses the class name lowercased (`Task` → `task`, `Category` → `category`). Use `@Table` explicitly when the class name and table name differ, or for clarity.
+
+### `@Id`
+
+```java
+@Id
+private Long id;
+```
+
+Marks the field as the primary key. Every entity must have exactly one `@Id` field. The type should be `Long` for database-generated ids (never `int` — `Long` handles null before the id is assigned).
+
+### `@GeneratedValue`
+
+```java
+// Strategy: IDENTITY — database generates the id
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+
+// Strategy: AUTO (default) — JPA picks a strategy
+@Id
+@GeneratedValue
+private Long id;
+```
+
+|Strategy|Behavior|Used on in your project|
+|---|---|---|
+|`IDENTITY`|Database auto-increments via `GENERATED BY DEFAULT AS IDENTITY`|`Category`|
+|`AUTO`|JPA picks — with PostgreSQL, uses a sequence (`task_seq`)|`Task`|
+|`SEQUENCE`|Explicitly names a database sequence|Not used, but underlies AUTO with PostgreSQL|
+
+Your `V1__init.sql` creates `task_seq START WITH 1 INCREMENT BY 50`. The `INCREMENT BY 50` is Hibernate's default sequence allocation size — it pre-fetches 50 ids at a time to reduce database roundtrips.
+
+### `@Column`
+
+```java
+@Column(name = "is_complete", nullable = false)
+private Boolean isComplete;
+```
+
+Maps a field to a specific column name or applies constraints. If omitted, JPA maps the field to a column using the naming strategy — camelCase fields are automatically converted to snake_case (`isComplete` → `is_complete`). Use `@Column` explicitly when:
+
+- The column name differs from what the naming strategy would generate
+- You need to enforce `nullable = false`, `unique = true`, or `length` constraints at the JPA level
+
+### `@ManyToOne` and `@JoinColumn`
+
+```java
+@ManyToOne
+@JoinColumn(name = "category_id")
+private Category category;
+```
+
+Defines a many-to-one relationship: many `Task` rows belong to one `Category` row. `@JoinColumn` names the foreign key column in the `task` table. This maps directly to:
+
+```sql
+ALTER TABLE task
+    ADD CONSTRAINT FK_TASK_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES category (id);
+```
+
+When you load a `Task`, Hibernate automatically runs a second query to fetch the associated `Category` and populates the `category` field. You get the full nested object, not just the raw `category_id` integer.
+
+---
+
+## Repository Annotations
+
+### `@Repository`
+
+```java
+@Repository
+public interface TaskRepository extends JpaRepository<Task, Long> { }
+```
+
+Marks this interface as a data access component. Two effects:
+
+1. Spring registers it as a bean (enabling injection)
+2. Spring translates database-specific exceptions into Spring's `DataAccessException` hierarchy — consistent exception handling regardless of database
+
+`JpaRepository<Task, Long>` — the two type parameters are the entity type and the primary key type. By extending it, the repository inherits full CRUD operations with no implementation required.
+
+---
+
+## Spring Data: Derived Query Methods
+
+Spring Data JPA reads method names and generates SQL automatically. The method name is the query.
+
+```java
+public interface CategoryRepository extends JpaRepository<Category, Long> {
+    Optional<Category> findCategoryByLabel(String label);
+}
+```
+
+Spring reads `findCategoryByLabel` as: `SELECT * FROM category WHERE label = ?` and generates the implementation at runtime. You write zero SQL.
+
+**Naming vocabulary:**
+
+|Keyword|SQL equivalent|
+|---|---|
+|`findBy`|`SELECT ... WHERE`|
+|`And`|`AND`|
+|`Or`|`OR`|
+|`Containing`|`LIKE %?%`|
+|`StartingWith`|`LIKE ?%`|
+|`OrderByXAsc/Desc`|`ORDER BY x ASC/DESC`|
+|`existsBy`|`SELECT EXISTS WHERE`|
+|`countBy`|`SELECT COUNT WHERE`|
+|`deleteBy`|`DELETE WHERE`|
+
+---
+
+## Jackson: Java ↔ JSON
+
+Jackson is the library Spring uses to convert between Java objects and JSON. It's bundled in `spring-boot-starter-webmvc` — you don't configure it manually for standard use.
+
+**Serialization (Java → JSON):** when your controller returns a `Task`, Jackson inspects its getters and builds a JSON object.
+
+```java
+// Java object
+Task task = new Task("Learn TDD", "research TDD", false, category);
+task.setId(1L);
+
+// Jackson produces:
+{
+  "id": 1,
+  "title": "Learn TDD",
+  "description": "research TDD",
+  "isComplete": false,
+  "category": {
+    "id": 1,
+    "label": "started"
+  }
+}
+```
+
+**Deserialization (JSON → Java):** when a POST request arrives with a JSON body and the controller has `@RequestBody Task task`, Jackson reads the JSON keys and calls the matching setters on a new `Task` instance.
+
+**Why getters and setters are required on entities:** Jackson uses them. An entity with no getters serializes to `{}`. An entity with no setters can't be deserialized from a request body.
+
+**The naming convention:** `getTitle()` → `"title"`. `getIsComplete()` → `"isComplete"`. Jackson strips the `get` prefix and lowercases the first letter.
+
+---
+
+## application.yaml: Datasource and JPA Config
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/todo
+    driver-class-name: org.postgresql.Driver
+    username: todo_dev
+    password: todo_dev12
+
+  jpa:
+    hibernate:
+      ddl-auto: validate    # let Flyway own the schema; Hibernate only checks
+    show-sql: true          # prints generated SQL to console — useful for debugging
+```
+
+**`ddl-auto` options:**
+
+|Value|Behavior|When to use|
+|---|---|---|
+|`validate`|Checks entity-to-schema mapping on startup, changes nothing|Production / with Flyway|
+|`update`|Alters schema to match entities|Development without Flyway (risky)|
+|`create`|Drops and recreates schema on every startup|Testing only|
+|`create-drop`|Creates on startup, drops on shutdown|Testing only|
+|`none`|Does nothing|When you manage schema entirely manually|
+
+Your current config uses `update`. With Flyway managing the schema, this should be `validate` — see [[Flyway]] for why.
+
+`show-sql: true` prints every Hibernate-generated SQL statement to the console. Useful during development to verify what queries are running. Turn it off in production.
+
+---
+
+## Self-Check
+
+**What is the difference between JPA and Hibernate?** JPA is the specification — the set of rules and annotations (`@Entity`, `@Id`, `@ManyToOne`). Hibernate is the library that implements those rules and generates the actual SQL. You write to the JPA spec; Hibernate does the work.
+
+**Why does every entity need a no-arg constructor?** Hibernate creates entity objects by calling the no-arg constructor, then setting fields via reflection. If the no-arg constructor is missing, Hibernate throws an instantiation exception at startup.
+
+**What does `@ManyToOne` actually do at runtime?** When you load a `Task` from the database, Hibernate sees the `category_id` foreign key column, runs a second `SELECT` against the `category` table, and populates `task.category` with the full `Category` object. This is called eager loading and is the default for `@ManyToOne`.
+
+**Why use `Optional<T>` as a return type on repository methods?** It forces the caller to explicitly handle the case where a record doesn't exist. Without `Optional`, a not-found query returns `null`, which causes a `NullPointerException` at the call site. `Optional` makes the absence of data a first-class concept.
+
+---
+
 ## Related
+
+- [[Spring Boot - Entities and JPA]] — full deep-dive on `@Entity`, `@ManyToOne`, `@GeneratedValue` using your actual `Task` and `Category` classes
+- [[Spring Boot - Repositories and Queries]] — `@Repository`, `JpaRepository`, derived query methods, and `Optional` in full detail
+- [[Spring Boot - Annotations Reference]] — complete annotation reference covering every `@` in the JPA and web layers
+- [[Spring Boot - The Request Lifecycle]] — shows when and why JPA annotations activate during a live request
+- [[Flyway]] — creates the tables that JPA entities map to; the two must stay in sync
 - [[Spring Framework]] — JPA is the persistence layer of the Spring stack
-- [[_INDEX - SQL Course]] — JPA generates SQL under the hood via Hibernate
-- [[Introduction to TDD Arrange]] — @DataJpaTest is the test type for the repository layer
-- [[Basic Queries and SQL Commands]] — understanding raw SQL helps understand what JPA generates
+- [[SQL/Basic Queries and SQL Commands]] — understanding raw SQL helps understand what JPA generates
+- [[TDD/Introduction to TDD Arrange]] — `@DataJpaTest` is the test type for the repository layer
+

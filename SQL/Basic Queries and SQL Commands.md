@@ -66,3 +66,4 @@
 - [[Filtering, Joins, and String Functions]] — applies basic queries with JOINs and filters
 - [[Spring JPA Overview - Annotations]] — Spring Data generates DDL and DML automatically
 - [[Final Project Part 1 Code Space]] — SELECT, JOIN, and aggregate queries used throughout
+- [[Spring Boot - Repositories and Queries]] — derived query methods are the Java abstraction over the SQL concepts in that note

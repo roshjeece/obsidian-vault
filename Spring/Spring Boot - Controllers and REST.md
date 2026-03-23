@@ -219,6 +219,3 @@ public void deleteCategory(@PathVariable Long id) {
 - [[TDD/Introduction to TDD Arrange]] — all controller TODOs should be built test-first
 - [[Web/JavaScript - DOM]] — the frontend that would consume these endpoints
 
-## Suggested Backlinks
-- Add [[Spring Boot - Controllers and REST]] to [[TDD/Introduction to TDD Arrange]] — the controller TODO pattern (write test first, then implement) is the direct application of TDD
-- Add [[Spring Boot - Controllers and REST]] to [[Web/JavaScript - DOM]] — the REST endpoints this note defines are what JavaScript fetch calls would hit

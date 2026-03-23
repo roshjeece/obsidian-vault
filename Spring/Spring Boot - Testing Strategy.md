@@ -273,6 +273,3 @@ This maps directly to the TDD pattern: you know what the test should assert befo
 - [[TDD/Introduction to TDD Arrange]] — the Arrange/Act/Assert pattern every test uses
 - [[Spring Boot - The Request Lifecycle]] — integration tests exercise the full lifecycle
 
-## Suggested Backlinks
-- Add [[Spring Boot - Testing Strategy]] to [[TDD/Introduction to TDD Arrange]] — this note is the concrete Spring implementation of the TDD concepts in that note
-- Add [[Spring Boot - Testing Strategy]] to [[Spring Framework]] — testing strategy is a core part of how Spring Boot applications are built

@@ -178,6 +178,3 @@ This is the only `main()` in the entire project. `@SpringBootApplication` is a s
 - [[Spring Boot - Annotations Reference]] — every @ annotation in this project explained
 - [[Spring Boot - Testing Strategy]] — how the test folder mirrors this structure
 
-## Suggested Backlinks
-- Add [[Spring Boot - Project Structure and Startup]] to [[Spring Framework]] — grounds the broad framework overview in a concrete project structure
-- Add [[Spring Boot - Project Structure and Startup]] to [[Flyway]] — connects migration execution to the startup sequence where it actually runs

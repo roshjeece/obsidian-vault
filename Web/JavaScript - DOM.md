@@ -362,3 +362,4 @@ woof
 - [[CSS - Bootstrap]] — Bootstrap components are targeted via DOM selectors
 - [[Forms, Navigation, and DOM Basics]] — forms and DOM selectors used together
 - [[Spring Framework]] — DOM manipulation is the frontend counterpart to Spring REST endpoints
+- [[Spring Boot - Controllers and REST]] — the REST endpoints defined in that note are what JavaScript fetch calls would hit

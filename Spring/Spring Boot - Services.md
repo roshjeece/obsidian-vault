@@ -181,6 +181,3 @@ Spring creates exactly one instance of each `@Service` class at startup and reus
 - [[Spring Boot - Annotations Reference]] — `@Service`, `@Mock`, `@InjectMocks` explained
 - [[Java/Classes, Objects, and Encapsulation]] — services apply encapsulation principles at the architectural level
 
-## Suggested Backlinks
-- Add [[Spring Boot - Services]] to [[Java/Classes, Objects, and Encapsulation]] — the service layer is encapsulation applied at architecture scale
-- Add [[Spring Boot - Services]] to [[TDD/Introduction to TDD Arrange]] — service tests are the primary target for unit testing with mocks

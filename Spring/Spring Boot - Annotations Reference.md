@@ -242,6 +242,3 @@ Tells Spring to inject the matching bean from the application context. Used in t
 - [[Spring JPA Overview - Annotations]] — existing annotation reference to cross-link
 - [[TDD/Introduction to TDD Arrange]] — the testing philosophy behind `@BeforeEach` and Arrange/Act/Assert
 
-## Suggested Backlinks
-- Add [[Spring Boot - Annotations Reference]] to [[Spring JPA Overview - Annotations]] — direct peer; both cover annotations, different scopes
-- Add [[Spring Boot - Annotations Reference]] to [[TDD/Introduction to TDD Arrange]] — test annotations are the implementation of the TDD concepts in that note
