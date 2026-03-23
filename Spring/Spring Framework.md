@@ -1,420 +1,290 @@
 ---
 
 ---
-### Overview
+# Spring Framework
 
-- **Spring Framework** is a widely used Java framework for building applications (especially web apps).
-- It provides the “plumbing” so your code can stay focused on business logic.
-- Big benefits: **flexibility**, **extensibility**, and **testability**.
-- Reference: [Spring Framework Overview](https://docs.spring.io/spring-framework/reference/overview.html)
+BLUF: Spring is a Java framework that removes the work of manually creating and connecting objects. You write business logic; Spring handles wiring, HTTP routing, database access, and lifecycle management. The core mechanic is Dependency Injection — Spring builds your objects and provides them where needed so you never call `new` on a managed class.
 
 ---
 
-### Core idea: IoC + DI (how Spring “wires” your app)
+## Inversion of Control and Dependency Injection
 
-Spring helps assemble your app using:
+These two terms describe the same mechanic from different angles.
 
-- **Inversion of Control (IoC):** your code does not manually create and connect objects.
-- **Dependency Injection (DI):** Spring *provides* the objects your classes depend on.
+**Inversion of Control (IoC):** Normally, your code controls when objects are created. With IoC, you give that control to the framework. Spring decides when to create your `TaskService`, not you.
 
-**High-level flow**
+**Dependency Injection (DI):** Spring _provides_ the objects a class needs rather than the class creating them itself.
 
-1. **Business objects (POJOs)**
-    - Your plain Java classes (they can be “Spring-aware” via annotations, but they do not need to know *how* dependencies are created).
-2. **Configuration metadata**
-    - Instructions for wiring: annotations, Java config, or XML.
-3. **Spring Container (IoC Container / ApplicationContext)**
-    - Creates objects (**beans**)
-    - Injects dependencies
-    - Manages lifecycle
-    - Can provide cross-cutting features (transactions, security, etc.)
-4. **Fully configured system**
-    - Components collaborate without manually new-ing up dependencies.
+```java
+// Without DI — you control construction
+public class TaskController {
+    private TaskService taskService = new TaskService(new TaskRepository());
+}
 
-Key takeaway: **DI makes code easier to swap, test, and maintain**.
+// With DI — Spring controls construction
+public class TaskController {
+    private final TaskService taskService;
 
----
-
-### Spring Web request flow (Controller → Service → Repository)
-
-```mermaid
-graph TD
-	A["Client"] -->|HTTP Request| B["Controller"]
-	B --> C["Service"]
-	C --> D["Repository"]
-	D --> E["Database"]
-	B -->|HTTP Response| A
+    public TaskController(TaskService taskService) {  // Spring provides this
+        this.taskService = taskService;
+    }
+}
 ```
 
-**Responsibilities by layer**
-
-5. **@RestController / @Controller**
-    - Entry point for HTTP requests
-    - Translates request → service call → response
-    - Keep controllers “skinny” (little business logic)
-    - Commonly tested with **MockMvc** using `@WebMvcTest`
-6. **@Service**
-    - Business logic, validation, orchestration
-    - Often tested with **Mockito** (unit tests)
-7. **@Repository** (Spring Data)
-    - Data access / persistence
-    - Spring Data can auto-generate implementations for repository interfaces
-    - Custom query tests often use `@DataJpaTest` (or `@SpringBootTest` for broader integration)
-8. **@Entity**
-    - Maps Java objects to database tables/columns
-    - Needs an `@Id` field (primary key)
+**Why this matters:** The DI version is easier to test (you can pass in a fake `TaskService`), easier to swap (change the implementation without touching the controller), and impossible to misconfigure (Spring fails fast at startup if a dependency can't be satisfied).
 
 ---
 
-### HTTP methods and CRUD (quick mapping)
+## The Spring Container (ApplicationContext)
 
-- **GET**: read a resource (Retrieve)
-- **POST**: create a new resource (Create)
-- **PUT / PATCH**: update an existing resource (Update)
-    - PUT is typically full replace, PATCH is partial update
-- **DELETE**: delete a resource (Delete)
+The ApplicationContext is Spring's central object registry. At startup it:
 
----
+1. Scans your packages for annotated classes (`@RestController`, `@Service`, `@Repository`, `@Component`)
+2. Creates one instance of each (called a **bean**)
+3. Injects dependencies via constructors
+4. Manages the lifecycle of every bean for the life of the application
 
-### Common Spring MVC annotations (what we used)
-
-- `@RestController`
-    - Controller that returns data (usually JSON), not HTML views.
-- `@RequestMapping("/base/path")`
-    - Base route for a controller (prefixes all endpoints in that class).
-- `@GetMapping`, `@PostMapping`, `@PutMapping`, `@PatchMapping`, `@DeleteMapping`
-    - HTTP method-specific route mappings.
-- `@PathVariable`
-    - Reads a value from the URL path (example: `/api/books/42`).
-- `@RequestBody`
-    - Reads JSON body and converts it into a Java object.
-- `@Valid`
-    - Triggers Bean Validation (Jakarta Validation) on the incoming DTO.
-- `@AuthenticationPrincipal`
-    - Injects the authenticated user (when Spring Security is configured).
+You never interact with the ApplicationContext directly in normal development. It runs in the background. The result is a fully wired application where every class has its dependencies provided before the first request arrives.
 
 ---
 
-### Example: Controller (constructor injection)
+## The Four Layers
+
+Every feature in a Spring Boot app follows this structure:
+
+```
+HTTP Client
+    │
+    ▼
+@RestController    ← HTTP in/out. Maps requests to methods. Returns JSON.
+    │
+    ▼
+@Service           ← Business logic. The only place decisions get made.
+    │
+    ▼
+@Repository        ← Database access. Runs queries. Returns entities.
+    │
+    ▼
+Database
+```
+
+**Controller** — receives the HTTP request, deserializes JSON to Java, calls the service, serializes the result back to JSON. Contains zero business logic. If your controller is making decisions, move that code to the service.
+
+**Service** — owns all business rules. Orchestrates calls between repositories. The only layer that's allowed to call a repository. Annotated with `@Service`.
+
+**Repository** — the only layer that touches the database. Spring Data JPA generates the implementation automatically from an interface. Annotated with `@Repository`.
+
+**Entity** — a Java class that maps to a database table. Not a layer that processes requests — it's the data structure that moves between layers. Annotated with `@Entity`.
+
+---
+
+## Common Annotations
+
+### Component Registration
+
+|Annotation|What it marks|Effect|
+|---|---|---|
+|`@SpringBootApplication`|Main class|Enables component scan, auto-config, and boot config|
+|`@RestController`|Controller class|Registers as HTTP handler; return values auto-serialized to JSON|
+|`@Service`|Service class|Registers as a business logic bean|
+|`@Repository`|Repository interface|Registers as a data access bean; enables exception translation|
+|`@Component`|Any class|Generic registration — use the specific annotations above when applicable|
+
+### HTTP Routing
+
+|Annotation|HTTP Verb|Common use|
+|---|---|---|
+|`@RequestMapping("/path")`|—|Base path prefix for all methods in a controller|
+|`@GetMapping`|GET|Read/retrieve|
+|`@PostMapping`|POST|Create|
+|`@PutMapping`|PUT|Full replace|
+|`@PatchMapping`|PATCH|Partial update|
+|`@DeleteMapping`|DELETE|Remove|
+
+### Method Parameters
+
+|Annotation|What it does|
+|---|---|
+|`@RequestBody`|Deserializes the HTTP request body (JSON) into a Java object|
+|`@PathVariable`|Extracts a value from the URL path (e.g. `/tasks/42` → `id = 42`)|
+|`@RequestParam`|Extracts a query parameter (e.g. `/tasks?complete=true`)|
+|`@ResponseStatus`|Sets the HTTP response status code (e.g. `HttpStatus.CREATED` → 201)|
+|`@Valid`|Triggers Bean Validation on the annotated parameter — checks `@NotNull`, `@Size`, etc. defined on the object's fields. Requires `spring-boot-starter-validation` dependency.|
+|`@AuthenticationPrincipal`|Injects the currently authenticated user's principal object. Requires Spring Security. Used to access the logged-in user's identity inside a controller method.|
+
+---
+
+## Constructor Injection — The Right Pattern
 
 ```java
 @RestController
-@RequestMapping("/api/soldier")
-public class SoldierController {
+@RequestMapping("/api/v1/task")
+public class TaskController {
 
-	private final SoldierService soldierService;
+    private final TaskService taskService;
 
-	public SoldierController(SoldierService soldierService) {
-		this.soldierService = soldierService;
-	}
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
-	@GetMapping("/{id}")
-	public ResponseEntity<SoldierDTO> findSoldierById(@PathVariable Long id) {
-		SoldierDTO soldier = soldierService.findById(id);
-		return ResponseEntity.ok(soldier);
-	}
+    @GetMapping("/{id}")
+    public Task findTaskById(@PathVariable Long id) {
+        return taskService.findTaskById(id);
+    }
 
-	@PostMapping
-	public ResponseEntity<SoldierDTO> createSoldier(
-			@RequestBody @Valid SoldierDTO newSoldierDTO,
-			@AuthenticationPrincipal OidcUser oidcUser
-	) {
-		SoldierDTO created = soldierService.createSoldier(newSoldierDTO, oidcUser);
-		return ResponseEntity.status(HttpStatus.CREATED).body(created);
-	}
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Task saveNewTask(@RequestBody Task task) {
+        return taskService.saveTask(task);
+    }
 }
 ```
+
+**Why constructor injection over `@Autowired` on the field:**
+
+- Fields are `final` — dependency cannot be accidentally reassigned
+- The class explicitly declares what it needs — visible at a glance
+- Easier to test — you can construct the class manually with a mock argument
+- Spring's own documentation recommends this pattern
+
+**You don't need to annotate the constructor.** Spring detects a single constructor and uses it automatically.
 
 ---
 
-### Example: Service
+## HTTP Methods and CRUD
 
-```java
-@Service
-public class SoldierService {
+|HTTP Verb|CRUD operation|Typical response code|
+|---|---|---|
+|GET|Read|200 OK|
+|POST|Create|201 Created|
+|PUT|Update (full replace)|200 OK|
+|PATCH|Update (partial)|200 OK|
+|DELETE|Delete|204 No Content|
 
-	private final SoldierRepository soldierRepository;
-
-	public SoldierService(SoldierRepository soldierRepository) {
-		this.soldierRepository = soldierRepository;
-	}
-
-	public Long add(Soldier soldier) {
-		return soldierRepository.saveNewSoldier(soldier);
-	}
-
-	public Soldier findById(Long id) {
-		return soldierRepository.findSoldierById(id);
-	}
-}
-```
+PUT replaces the entire resource. PATCH updates specific fields. In practice, many APIs use PUT for both — be consistent within a project.
 
 ---
 
-### Example: Repository (Spring Data)
+## `ResponseEntity` — When You Need Control Over the Response
 
 ```java
-@Repository
-public interface SoldierRepository extends CrudRepository<Soldier, Long> {
-	List<Soldier> findAllByUic(String uic);
+// Fixed status code — use @ResponseStatus
+@PostMapping
+@ResponseStatus(HttpStatus.CREATED)
+public Task saveTask(@RequestBody Task task) {
+    return taskService.saveTask(task);
+}
+
+// Variable status code — use ResponseEntity
+@GetMapping("/{id}")
+public ResponseEntity<Task> findById(@PathVariable Long id) {
+    return taskService.findById(id)
+        .map(ResponseEntity::ok)                    // found → 200
+        .orElse(ResponseEntity.notFound().build()); // not found → 404
 }
 ```
 
-Notes:
-
-- Spring Data parses method names like `findAllByUic` to generate queries.
-- The entity must have a field/property named `uic`.
+Use `@ResponseStatus` when the response code never changes. Use `ResponseEntity` when the code depends on what happened.
 
 ---
 
-### Mini-activity: “Book” Spring Boot app (what we built)
+## JSON and Jackson
 
-- Create a new Spring Boot project
-- Prefer **YAML** config (if prompted)
-- Create a package (example used: `mil.army.moda.books.book`)
+Spring uses **Jackson** (bundled in `spring-boot-starter-webmvc`) to convert between Java objects and JSON automatically.
 
-Start simple:
+- **Serialization:** Controller returns a `Task` object → Jackson converts it to JSON → sent as HTTP response body
+- **Deserialization:** HTTP request body arrives as JSON → `@RequestBody` triggers Jackson → converted to `Task` Java object
 
-```java
-package mil.army.moda.books.book;
-
-public class Book {
-	private String title;
-	private String author;
-	private Boolean isCheckedOut;
-	private Integer pageCount;
-	private String isbn;
-	private Integer chapterCount;
-}
-```
-
-Then convert to a JPA Entity (database-backed):
-
-```java
-package mil.army.moda.books.book;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
-@Entity
-public class Book {
-
-	@Id
-	@GeneratedValue
-	private Long id;
-
-	private String title;
-	private String author;
-	private Boolean isCheckedOut;
-	private Integer pageCount;
-	private String isbn;
-	private Integer chapterCount;
-
-	public Book() {}
-
-	public Book(String title, String author, Boolean isCheckedOut, Integer pageCount, String isbn, Integer chapterCount) {
-		this.title = title;
-		this.author = author;
-		this.isCheckedOut = isCheckedOut;
-		this.pageCount = pageCount;
-		this.isbn = isbn;
-		this.chapterCount = chapterCount;
-	}
-
-	// getters/setters omitted here for brevity
-}
-```
-
-```java
-package mil.army.moda.books.book;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
-}
-```
-
-```java
-package mil.army.moda.books.book;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class BookService {
-
-	private final BookRepository bookRepository;
-
-	public BookService(BookRepository bookRepository) {
-		this.bookRepository = bookRepository;
-	}
-
-	public Book saveBook(Book book) {
-		return bookRepository.save(book);
-	}
-}
-```
-
-```java
-package mil.army.moda.books.book;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/api/book")
-public class BookController {
-
-	private final BookService bookService;
-
-	public BookController(BookService bookService) {
-		this.bookService = bookService;
-	}
-
-	@PostMapping("/save")
-	@ResponseStatus(HttpStatus.OK)
-	public Book saveBook(@RequestBody Book book) {
-		return bookService.saveBook(book);
-	}
-}
-```
-
-```java
-package mil.army.moda.books;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class BooksApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(BooksApplication.class, args);
-	}
-}
-```
+Jackson uses your getters to determine JSON field names. `getTitle()` → `"title"`. `getIsComplete()` → `"isComplete"`. This is why getters are required on entities.
 
 ---
 
-### Testing overview (what each test type was doing)
+## Gradle Dependencies (Spring Boot 4.x)
 
-- Use `@WebMvcTest(BookController.class)`
-- Mock the service with `@MockitoBean`
-- Use **MockMvc** to call the endpoint and validate the response
-
-```java
-@WebMvcTest(BookController.class)
-public class BookControllerTest {
-	@Autowired MockMvc mockMvc;
-	@Autowired ObjectMapper objectMapper;
-
-	@MockitoBean BookService bookService;
-
-	@Test
-	void shouldSaveNewBook() throws Exception {
-		Book book = new Book("Hobbit", "Tolkien", true, 800, "123-L3045", 12);
-		book.setId(1L);
-		when(bookService.saveBook(any(Book.class))).thenReturn(book);
-
-		String json = objectMapper.writeValueAsString(book);
-
-		mockMvc.perform(post("/api/book/save")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(json))
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.id").value(1));
-	}
-}
-```
-
-- Use Mockito with `@ExtendWith(MockitoExtension.class)`
-- Mock the repository and verify behavior
-
-- Use `@DataJpaTest`
-- Saves to the test database and verifies persistence works
-
----
-
-### JSON (why it came up)
-
-**JSON (JavaScript Object Notation)** is a text format for structured data.
-
-- Spring commonly **serializes** Java objects → JSON for responses
-- Spring commonly **deserializes** JSON request bodies → Java objects via `@RequestBody`
-
----
-
-### Gradle + Boot version note (class troubleshooting)
-
-Some people had issues with one Spring Boot version. In this project, using:
-
-- `org.springframework.boot` **3.4.2**
-
-helped get `./gradlew bootRun` working reliably.
-
-```javascript
+```groovy
+// build.gradle
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.4.2'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'org.springframework.boot' version '4.0.3'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Web layer — note: spring-boot-starter-webmvc in Spring Boot 4.x
+    // (was spring-boot-starter-web in Spring Boot 3.x)
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
-	runtimeOnly 'com.h2database:h2'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // Database layer
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
+    // Migrations
+    implementation 'org.springframework.boot:spring-boot-starter-flyway'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
 
-tasks.named('test') {
-	useJUnitPlatform()
+    // PostgreSQL driver (runtime only — not needed to compile)
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Auto-starts compose.yaml on boot
+    runtimeOnly 'org.springframework.boot:spring-boot-docker-compose'
+
+    // Testing
+    testRuntimeOnly 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 ```
 
+**Spring Boot 3.x vs 4.x dependency name change:**
+
+|Spring Boot 3.x|Spring Boot 4.x|
+|---|---|
+|`spring-boot-starter-web`|`spring-boot-starter-webmvc`|
+|`spring-boot-starter-test`|`spring-boot-starter-webmvc-test` + `spring-boot-starter-data-jpa-test`|
+
+If you use a 3.x starter name in a 4.x project, the dependency will fail to resolve. Always check which version you're on before copying a dependency block from documentation or Stack Overflow.
+
 ---
 
-### Run check: H2 console
+## Testing — Layer-to-Test-Type Mapping
 
-If you can navigate to `http://localhost:8080/h2-console`, the app is running.
+Each layer has a corresponding test type. Using the wrong one either loads too much (slow, brittle) or too little (misses real integration issues).
 
----
-
-### Things to review (from class)
-
-- Understand the roles of **Entity vs Repository vs Database**
-- Be able to explain the full flow: **Controller → Service → Repository → DB**
-- Know which test style goes with which layer (MockMvc vs Mockito vs DataJpaTest)
-## Related
-- [[Spring JPA Overview - Annotations]] — JPA layer sits beneath the Spring service/repository pattern
-- [[Introduction to TDD Arrange]] — controller, service, and repository layers each have a corresponding test type
-- [[Inheritance]] — Spring relies heavily on interface implementation and class hierarchies
-- [[Polymorphism]] — Spring's dependency injection uses polymorphic references
-- [[_INDEX - SQL Course]] — Spring JPA maps Java objects to SQL database tables
-- [[To Do Study - Self Learning]] — todo app is a direct Spring Boot application
----
-
-### Testing Layer Summary
-
-Each layer of the Spring stack has a corresponding test type. Knowing which to use and why is essential.
-
-| Layer | Annotation | What Gets Loaded | Mocks Needed |
+|Layer|Test annotation|What loads|What to mock|
 |---|---|---|---|
-| Controller | `@WebMvcTest` | Web layer only (no DB) | `@MockitoBean` for Service |
-| Service | `@ExtendWith(MockitoExtension.class)` | Nothing — pure unit test | `@Mock` for Repository |
-| Repository | `@DataJpaTest` | JPA + in-memory DB | None |
-| Full stack | `@SpringBootTest` | Entire application context | None (or selective) |
+|Service|`@ExtendWith(MockitoExtension.class)`|Nothing — pure unit test|`@Mock` the repository|
+|Controller|`@WebMvcTest(Controller.class)`|Web layer only|`@MockitoBean` the service|
+|Repository|`@DataJpaTest`|JPA + H2 in-memory DB|Nothing|
+|Full stack|`@SpringBootTest` + `@AutoConfigureMockMvc`|Entire application|Nothing (or selective)|
 
-**Key rules:**
-- `@WebMvcTest` — fast, tests HTTP request/response only. Always mock the service layer.
-- `@DataJpaTest` — spins up an embedded DB (H2 by default). Tests that queries and schema work correctly.
-- `@SpringBootTest` — slowest, most realistic. Use for integration tests that need the full context.
-- Mockito unit tests — fastest of all. No Spring context loaded at all.
+**Common mistake:** using `@SpringBootTest` for everything. It works but is slow, requires the database to be running, and hides layer separation problems. Match the test type to the layer.
 
-**Common mistake:** using `@SpringBootTest` for everything. It works but is slow and hides layer separation issues. Match the test type to the layer being tested.
+---
 
-[[React]] — capstone frontend; consumes Spring Boot REST API endpoints from the React layer
+## Self-Check
+
+**Can you trace a POST request from HTTP to database and back?** Client sends JSON → Controller's `@PostMapping` method receives it → `@RequestBody` deserializes JSON to Java object → Controller calls `service.save(object)` → Service applies business rules → Service calls `repository.save(object)` → Hibernate generates INSERT SQL → PostgreSQL executes it → saved entity (with database-assigned id) returns up the chain → Controller returns it → Jackson serializes to JSON → HTTP 201 response sent to client.
+
+**What is the difference between `@Service` and `@Repository`?** Functionally similar — both register a bean with the ApplicationContext. The distinction is semantic and tooling-based. `@Repository` additionally enables Spring's exception translation, converting database-specific exceptions into Spring's consistent `DataAccessException` hierarchy.
+
+**Why does constructor injection make testing easier?** Because you can construct the class manually in a test: `new TaskService(mockRepository, mockCategoryService)`. With field injection (`@Autowired` on a field), you can't construct the class without a Spring context.
+
+**Why do entities need a no-arg constructor?** JPA (Hibernate) creates entity objects by calling the no-arg constructor, then setting fields via reflection. If the no-arg constructor is missing, Hibernate throws an exception at startup.
+
+---
+
+## Related
+
+- [[Spring Boot - Project Structure and Startup]] — concrete project layout and startup sequence for a real Spring Boot app
+- [[Spring Boot - The Request Lifecycle]] — the Controller → Service → Repository flow traced through actual code
+- [[Spring Boot - Annotations Reference]] — full reference for every annotation mentioned in this note
+- [[Spring Boot - Testing Strategy]] — the test layer table expanded with real examples and patterns
+- [[Spring Boot - How to Build This Unassisted]] — step-by-step checklist for standing up everything this note describes
+- [[Spring JPA Overview - Annotations]] — the persistence layer that sits beneath the service/repository pattern
+- [[Flyway]] — manages the database schema that Spring JPA maps entities to
+- [[TDD/Introduction to TDD Arrange]] — the testing philosophy behind the layer-to-test-type mapping
+- [[Java/Inheritance]] — Spring relies heavily on interface implementation and class hierarchies
+- [[Java/Polymorphism]] — Spring's dependency injection uses polymorphic references
+- [[ADR-001-postgresql-over-h2]] — the decision that shapes which datasource this app connects to

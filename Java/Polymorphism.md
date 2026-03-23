@@ -107,3 +107,4 @@ private final SoldierRepository soldierRepository;
 - [[Spring JPA Overview - Annotations]] — repository interfaces are polymorphic by design
 - [[Introduction to TDD Arrange]] — polymorphic behavior is tested via Mockito mocks
 - [[Exceptions and Error Handling]] — catching a parent type (Exception) to handle child types is polymorphism in action
+- [[Spring Framework]] — DI works because Spring injects concrete implementations through polymorphic references

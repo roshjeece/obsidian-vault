@@ -237,3 +237,4 @@ class Hybrid extends Car{
 - [[Polymorphism]] — method overriding and upcasting build directly on inheritance
 - [[Spring Framework]] — Spring beans use inheritance and interface implementation patterns
 - [[Exceptions and Error Handling]] — exception hierarchy is a direct application of inheritance; child exception catches must come before parent catches
+- [[Spring Framework]] — Spring's component model is a direct application of the inheritance concepts in that note
