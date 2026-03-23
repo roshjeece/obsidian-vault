@@ -58,6 +58,19 @@ function MyForm() {
 
 ---
 
+## Babel
+
+Note who the "child" is:
+![[Pasted image 20260323112515.png]]
+The following will not work, it must be wrapped in a parent container:
+![[Pasted image 20260323112717.png]]
+
+You must wrap it all in a fragment:
+![[Pasted image 20260323112800.png]]
+
+
+---
+
 ## Related
 - [[JavaScript - Introduction]] — React is built on JavaScript fundamentals
 - [[JavaScript - Strings, Arrays, Objects]] — arrays and objects are used heavily in React state
