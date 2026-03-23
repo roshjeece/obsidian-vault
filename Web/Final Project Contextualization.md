@@ -60,3 +60,4 @@ Code & Presentation
 - [[JavaScript - DOM]] — DOM manipulation needed for dynamic UI
 - [[Database Creation and Schema Design]] — PostgreSQL schema design needed for two joined tables
 - [[Introduction to TDD Arrange]] — TDD applies to full-stack project testing
+- [[React]] — frontend framework required for the capstone; MUI components replace plain HTML

@@ -416,3 +416,5 @@ Each layer of the Spring stack has a corresponding test type. Knowing which to u
 - Mockito unit tests — fastest of all. No Spring context loaded at all.
 
 **Common mistake:** using `@SpringBootTest` for everything. It works but is slow and hides layer separation issues. Match the test type to the layer being tested.
+
+[[React]] — capstone frontend; consumes Spring Boot REST API endpoints from the React layer
