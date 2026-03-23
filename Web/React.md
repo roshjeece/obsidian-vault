@@ -68,8 +68,26 @@ The following will not work, it must be wrapped in a parent container:
 You must wrap it all in a fragment:
 ![[Pasted image 20260323112800.png]]
 
+## JSX: HTML inside JavaScript
+
+```JSX
+const App = () => {  
+  return (  
+      <>  
+        <h1>My First React Demo</h1>  
+        <p>Mr. Stark, I don't feel so good...</p>  
+      </>  
+  )  
+}  
+export default App;
+```
+
+![[Pasted image 20260323115422.png]]
 
 ---
+
+## Data Flow
+For right now, data can only flow down from parent to child (for now), for the purposes of this class
 
 ## Related
 - [[JavaScript - Introduction]] — React is built on JavaScript fundamentals
