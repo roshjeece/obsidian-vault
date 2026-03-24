@@ -18,3 +18,17 @@ Diagnostic:
 - Drill-down analytics (breaking down data by category)
 - Data mining (finding patterns in large datasets)
 - Correlation and regression analysis
+
+Predictive Analytics
+- "What is going to happen?"
+- Forecast future trends
+- Machine learning algorithms (linear regression, decision trees, neural networks)
+- Time-series forecasting
+- Statistical modeling
+
+Prescriptive:
+- Optimization algorithms
+- Simulation models
+- AI-based recommendation systems
+
+Cognitive Analytics
