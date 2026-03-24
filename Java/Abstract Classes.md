@@ -230,3 +230,12 @@ Abstract Classes:
 - Abstract classes can have constructors
 - A class can be made abstract without any abstract method
 - A class **cannot** inherit from multiple abstract classes
+- Abstract classes are NOT used to create objects
+- Abstract classes are design to only act as a base class to be inherited by other classes
+- You don't actually need to implement the abstract methods if you never create a class that isn't abstract
+
+Behavior:
+- super() is implicitly inserted from the parent within the child
+- super() always calls the no-arg parent instructor
+- object type ( = new B(3) ) drives execution
+- Reference type ( A c = ) does not drive execution, this just has to be proper (i.e. cannot be of a child class relative to the object type)
