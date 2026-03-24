@@ -215,3 +215,18 @@ class GrandChild extends Child {
 ```
 
 To achieve a valid result, all inherited methods must be implemented. The lowest child class can only be non-abstract if it, along with all its parent classes, implements all the methods defined in the highest parent class
+
+
+Abstraction:
+- Identifies essential details
+- Disregards non-essential information
+- **Does not** break the problem down into smaller tasks
+
+Abstract method:
+- A method without a body that is declared with the reserved word **abstract**
+
+Abstract Classes:
+- if we derive an abstract class and do not implement all the abstract methods, then the derived class should also be marked as abstract using 'abstract' keyword
+- Abstract classes can have constructors
+- A class can be made abstract without any abstract method
+- A class **cannot** inherit from multiple abstract classes
