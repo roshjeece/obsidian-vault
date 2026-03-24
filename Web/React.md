@@ -1,5 +1,3 @@
-# React
-
 ## BLUF
 React is a JavaScript library for building user interfaces using reusable components. Your capstone requires React with MUI (Material UI) — no plain HTML. You write components as functions, compose them together, and let React handle DOM updates.
 
@@ -19,13 +17,13 @@ Primary work happens in `src/App.jsx`. Delete the boilerplate Vite content and s
 
 ## Core Concepts
 
-| Concept | What It Is |
-|---|---|
-| **Component** | A reusable UI building block written as a JS function that returns JSX |
-| **JSX** | HTML-like syntax written inside JavaScript — compiled by Babel to `React.createElement()` calls |
-| **Props** | Data passed into a component from its parent — read-only inside the child |
-| **State** | Data managed inside a component — changing it triggers a re-render |
-| **Hooks** | Functions like `useState` and `useEffect` that add functionality to components |
+| Concept       | What It Is                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| **Component** | A reusable UI building block written as a JS function that returns JSX                          |
+| **JSX**       | HTML-like syntax written inside JavaScript — compiled by Babel to `React.createElement()` calls |
+| **Props**     | Data passed into a component from its parent — read-only inside the child                       |
+| **State**     | Data managed inside a component — changing it triggers a re-render                              |
+| **Hooks**     | Functions like `useState` and `useEffect` that add functionality to components                  |
 
 ---
 
