@@ -130,3 +130,88 @@ class WildDog extends Dog {
   
     }}
 ```
+
+## ... can have Constructors
+```java
+public class Main {  
+    public static void main(String[] args) {  
+        Vehicle v = new SUV();  
+    }  
+}  
+  
+  
+abstract class Vehicle {  
+    private int model;  
+    private int vin;  
+  
+    public Vehicle () {  
+        System.out.println("Constructor of the base");  
+    }  
+}  
+  
+class SUV extends Vehicle {  
+  
+}
+```
+
+
+---
+## Inheriting Abstract Methods
+- A class must be abstract if it inherits abstract methods it doesn't fully implement:
+
+### Valid:
+```java
+public class Main {  
+    public static void main(String[] args) {  
+  
+    }}  
+  
+  
+abstract class Base {  
+    abstract public void func1();  
+    abstract public void func2();  
+    abstract public void func3();  
+}  
+  
+abstract class Child extends Base {  
+  
+    public void func1(){  
+  
+    }}  
+  
+class GrandChild extends Child {  
+    public void func2(){  
+  
+    }  
+    public void func3(){  
+  
+    }}
+```
+
+### Invalid:
+```java
+public class Main {  
+    public static void main(String[] args) {  
+  
+    }}  
+  
+  
+abstract class Base {  
+    abstract public void func1();  
+    abstract public void func2();  
+    abstract public void func3();  
+}  
+  
+abstract class Child extends Base {  
+  
+    public void func1(){  
+  
+    }}  
+  
+class GrandChild extends Child {  
+    public void func2(){  
+  
+    }    }
+```
+
+To achieve a valid result, all inherited methods must be implemented. The lowest child class can only be non-abstract if it, along with all its parent classes, implements all the methods defined in the highest parent class
