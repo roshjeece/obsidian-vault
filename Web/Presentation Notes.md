@@ -33,3 +33,32 @@
 - More scalable, interchangeable
 
 
+### **Slide 6 — Data Model: Key Tables**
+
+- **`soldier`**
+    - Root table — everything traces back here
+    - Stores age group and gender
+        - Both required for age- and sex-normed AFT scoring
+- **`aft_event`**
+    - Reference/seed data — loaded once, never changed at runtime
+    - Holds all 5 events: MDL, HRP, SDC, PLK, 2MR
+        - Linking by FK keeps event names consistent across the entire app
+- **`aft_test_result` + `event_score`**
+    - Parent-child pair
+    - `aft_test_result` — top level, stores date and total score
+    - `event_score` — child, one row per event
+        - Stores both raw performance value and points earned
+        - Same structure handles a full 5-event AFT and a single check-in set
+- **`workout_session`**
+    - One record per training session
+    - Stores date, duration, and RPE
+        - RPE intentionally lives here at session level — keeps logging fast and low-friction
+- **`improvement_suggestion`**
+    - The rule engine's output table
+    - Gaps and priorities written here, not just returned to the UI
+        - Persists the Soldier's training priorities between sessions
+        - Builds a recommendation history over time
+- **Key join (rubric requirement)**
+    - `soldier → aft_test_result → event_score → aft_event`
+    - 4-table query that drives the entire gap analysis
+        - This is the core of the application
