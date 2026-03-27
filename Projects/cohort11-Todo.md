@@ -98,3 +98,62 @@ export default defineConfig({
 Reference:
 https://vitest.dev/api/test
 https://testing-library.com/
+
+
+###### setupTest.ts within frontend/src
+```ts
+import { expect } from 'vitest';  
+import * as matchers from '@testing-library/jest-dom/matchers';  
+import '@testing-library/jest-dom';  
+  
+expect.extend(matchers);
+```
+
+Adding test section to **package.json**
+```json
+{  
+  "name": "frontend",  
+  "private": true,  
+  "version": "0.0.0",  
+  "type": "module",  
+  "scripts": {  
+    "dev": "vite",  
+    "build": "tsc -b && vite build",  
+    "lint": "eslint .",  
+    "preview": "vite preview",  
+    "test": "vitest",  
+    "test:watch": "vitest --watch",  
+    "test:coverage": "vitest --coverage"  
+  }, [...]
+```
+
+###### Ensure this is in tsconfig.app.json
+```json
+"include": [  
+  "src",  
+  "node_modules/vitest/globals.d.ts"  
+]
+```
+
+###### Within src:
+1. Create `__tests__`
+2. Within `__tests__,` create `App.test.tsx`
+3. This code:
+```tsx
+import {render, screen} from "@testing-library/react";  
+import App from "../App.tsx";  
+import {expect} from "vitest";  
+  
+describe('App.tsx', () => {  
+  
+    it('should display heading', () => {  
+        // Arrange  
+        render(<App />)  
+        // Assert  
+        expect(screen.getByRole('heading', {name: /started/i})).toBeInTheDocument();  
+        // role is literally the heading tags (<h1>, etc.)  
+        screen.logTestingPlaygroundURL();  
+    });  
+  
+});
+```
