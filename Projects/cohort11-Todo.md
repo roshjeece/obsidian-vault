@@ -94,3 +94,7 @@ export default defineConfig({
   },  
 })
 ```
+
+Reference:
+https://vitest.dev/api/test
+https://testing-library.com/
