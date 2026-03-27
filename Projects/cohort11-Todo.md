@@ -157,3 +157,8 @@ describe('App.tsx', () => {
   
 });
 ```
+- You are rendering the application from App.tsx
+- **`screen`** — the virtual DOM that Testing Library renders your component into. Think of it as a handle to "what's on the page."
+- **`.getByRole('heading', {name: /started/i})`** — queries the DOM for an element with the ARIA role of `heading` (i.e., `<h1>`–`<h6>`) whose accessible name matches the regex `/started/i`. The `i` flag makes it case-insensitive, so it'll match "Get started", "STARTED", etc.
+- **`expect(...)`** — wraps the found element in Vitest's assertion engine.
+- **`.toBeInTheDocument()`** — the actual assertion, provided by `@testing-library/jest-dom`. Confirms the element exists in the DOM rather than being null or undefined.
