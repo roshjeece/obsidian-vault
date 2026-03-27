@@ -63,4 +63,34 @@ Package namespace: `mil.army.moda.todo`
 
 27MAR26
 
-1. 
+1. `yawn create vite` in root
+	1. name it `frontend`
+	2. select React
+	3. select TypeScript + React Compiler
+2. cd into `frontend`
+3. `yarn add -D @testing-library/react @testing-library/jest-dom jsdom`
+
+###### vite.config.ts
+```ts
+/// <reference types="vitest" />  
+import { defineConfig } from 'vitest/config'  
+import react, { reactCompilerPreset } from '@vitejs/plugin-react'  
+import babel from '@rolldown/plugin-babel'  
+  
+// https://vite.dev/config/  
+export default defineConfig({  
+  plugins: [  
+    react(),  
+    babel({ presets: [reactCompilerPreset()] })  
+  ],  
+  build: {  
+    outDir: 'build',  
+  },  
+  test: {  
+    globals: true,  
+    environment: 'jsdom',  
+    setupFiles: './src/setupTests.ts',  
+    css: true,  
+  },  
+})
+```
