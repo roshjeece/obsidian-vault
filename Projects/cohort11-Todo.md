@@ -162,3 +162,70 @@ describe('App.tsx', () => {
 - **`.getByRole('heading', {name: /started/i})`** — queries the DOM for an element with the ARIA role of `heading` (i.e., `<h1>`–`<h6>`) whose accessible name matches the regex `/started/i`. The `i` flag makes it case-insensitive, so it'll match "Get started", "STARTED", etc.
 - **`expect(...)`** — wraps the found element in Vitest's assertion engine.
 - **`.toBeInTheDocument()`** — the actual assertion, provided by `@testing-library/jest-dom`. Confirms the element exists in the DOM rather than being null or undefined.
+
+
+###### Button Press and Async Test
+```tsx
+import {render, screen} from "@testing-library/react";  
+import App from "../App.tsx";  
+import {expect} from "vitest";  
+import userEvent from "@testing-library/user-event"; // use this for UserEvent
+  
+describe('App.tsx', () => {  
+  
+    it('should display heading', () => {  
+        // Arrange  
+        render(<App />)  
+        // Assert  
+        expect(screen.getByRole('heading', {name: /started/i})).toBeInTheDocument();  
+        // role is literally the heading tags (<h1>, etc.)  
+        screen.logTestingPlaygroundURL();  
+    });  
+  
+    it('should count button increment counter', async () => {  // required
+        // Arrange  
+        render(<App/>)  
+        const user = userEvent.setup();  
+		
+		// Assert  
+        const button = screen.getByRole('button', {name: /count/i});  
+        expect(screen.getByRole('button', {name:/0/i})).toBeVisible();  
+  
+        // Act  
+        await user.click(button);  // required
+        expect(screen.getByRole('button', {name:/1/i})).toBeVisible();  
+  
+    })  
+  
+});
+```
+
+
+##### "Promise"
+
+A Promise is JavaScript's way of saying **"I don't have this value yet, but I will."**
+
+When a function returns a Promise, it means: "I've started the work, here's a placeholder — come back for the result later."
+
+
+```js
+const result = user.click(button); // result is a Promise, not the finished click
+```
+
+A Promise has three states:
+
+- **Pending** — work is in progress
+- **Resolved** — work finished successfully
+- **Rejected** — work finished with an error
+
+`await` is just clean syntax for "wait until this Promise resolves before continuing." Under the hood, everything after the `await` is essentially a callback that runs when the Promise finishes.
+
+The alternative to `await` is chaining `.then()`:
+
+```js
+user.click(button).then(() => {
+    expect(screen.getByRole('button', {name:/1/i})).toBeVisible();
+});
+```
+
+`async/await` and `.then()` do the same thing — `async/await` is just easier to read, especially when you have multiple sequential async operations.
