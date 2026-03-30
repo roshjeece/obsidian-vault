@@ -20,6 +20,7 @@ public class Main {
 
 These functions are identical except for the data types. Thus, you can use a generic instead:
 ```Java
+// Generic Class
 public class Main {  
     public static void main(String[] args) {  
   
@@ -42,6 +43,38 @@ class Box <T> {
   
     public T get(){  
         return value;  
+    }  
+}
+```
+
+```Java
+// Generic Method
+public class Main {  
+    public static void main(String[] args) {  
+  
+        func1(10, 20.5);  
+        func1("hello", 2);  
+    }  
+  
+    public static <T, K> void func1(T i, K j){  
+        System.out.println(i + "" + j);  
+    }  
+}
+```
+
+###### Bounded Types Parameter
+- Limited Generic (ex: limit to only numerical values)
+
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        func1(10);  
+        func1("hello");  
+    }  
+  
+    public static <T extends Number> void func1(T i){  
+        System.out.println(i);  
     }  
 }
 ```
