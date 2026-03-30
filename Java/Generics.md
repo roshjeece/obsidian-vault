@@ -78,3 +78,42 @@ public class Main {
     }  
 }
 ```
+
+
+Implementing Comparable for Binary Search Across Data Types
+
+```Java
+public class Main {  
+    public static void main(String[] args) {  
+  
+        Double[] sortedArray = {1.0, 5.0, 10.0, 12.0, 17.0, 20.0, 24.0, 30.0};  
+        double numberTarget = 17.0;  
+        String[] strings = {"Volvo", "BMW", "Ford", "Mazda"};  
+        String stringTarget = "Ford";  
+  
+        binarySearch(sortedArray, numberTarget);  
+        binarySearch(strings, stringTarget);  
+    }  
+  
+    public static <T extends Comparable<T>> void binarySearch(T[] array, T target) {  
+        int lowIndex = 0;  
+        int highIndex = array.length - 1;  
+  
+        while (lowIndex <= highIndex) {  
+            int midIndex = lowIndex + (highIndex - lowIndex) / 2;  
+            if (array[midIndex].compareTo(target) == 0) {  
+                System.out.println("Found at index: " + midIndex);  
+                return;  
+            }  
+            else if (array[midIndex].compareTo(target) > 0) {  
+                highIndex = midIndex - 1;  
+            }  
+            else {  
+                lowIndex = midIndex + 1;  
+            }  
+        }  
+        System.out.println("Not found");  
+    }  
+  
+}
+```
