@@ -117,3 +117,33 @@ public class Main {
   
 }
 ```
+
+Bubble Sort with Comparable and Generics
+```Java
+import java.util.Arrays;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+  
+        Integer[] unsortedArray = {10, 5, 7, 12, 3};  
+        bubbleSort(unsortedArray);  
+  
+        String[] wordArray = {"Acura", "Toyota", "Nissan", "BMW"};  
+        bubbleSort(wordArray);  
+    }  
+  
+    public static <T extends Comparable<T>> void bubbleSort(T[] array) {  
+  
+        for (int x = 0; x < array.length - 1; x++) {  
+            for (int y = 0; y < array.length - 1 - x; y++){  
+                if (array[y].compareTo(array[y + 1]) > 0) {  
+                    T temp = array[y];  
+                    array[y] = array[y+1];  
+                    array[y+1] = temp;  
+                }  
+            }  
+        }  
+        System.out.println(Arrays.toString(array));  
+    }  
+}
+```
