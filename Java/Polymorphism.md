@@ -1,5 +1,3 @@
-# Polymorphism
-
 Polymorphism means "multiple behaviors" — the same method name behaves differently depending on which object is calling it at runtime.
 
 Polymorphism builds directly on [[Inheritance]]. Without a parent-child relationship, there is nothing to dispatch dynamically.
@@ -108,3 +106,4 @@ private final SoldierRepository soldierRepository;
 - [[Introduction to TDD Arrange]] — polymorphic behavior is tested via Mockito mocks
 - [[Exceptions and Error Handling]] — catching a parent type (Exception) to handle child types is polymorphism in action
 - [[Spring Framework]] — DI works because Spring injects concrete implementations through polymorphic references
+- [[Abstract Classes and Abstraction]] — abstract parent references pointing to concrete child objects are a primary polymorphism use case

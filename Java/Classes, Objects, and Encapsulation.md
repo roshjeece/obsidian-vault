@@ -118,3 +118,4 @@ Don’t Do It!
 - [[Polymorphism]] — polymorphism requires understanding of classes and objects first
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
 - [[Spring Boot - Services]] — the service layer is encapsulation applied at architecture scale
+- [[Abstract Classes and Abstraction]] — abstract classes build directly on class structure; useful cross-reference for OOP design
