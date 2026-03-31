@@ -34,3 +34,11 @@ const App = () => {
 
 export default App;
 ```
+
+Practice: Implement React Bootstrap Navbar
+
+---
+
+## States
+
+Think if "Count is n" button on default Reac 
