@@ -41,4 +41,15 @@ Practice: Implement React Bootstrap Navbar
 
 ## States
 
-Think if "Count is n" button on default Reac 
+Think if "Count is n" button on default React App page
+State management:
+- State is set to 0 by default
+```jsx
+function App() {  
+  const [count, setCount] = useState(0)
+```
+
+###### State Management Practice
+- user types in input
+- clicks button to see password
+- clicks button to hide password
