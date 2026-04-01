@@ -19,4 +19,7 @@ Implementing the dog image generator with React
 
 Consuming an API
 1) endpoints
-2) verbs - GET, P
+2) verbs - GET, POST
+3) what kind of data = JSON or XML
+4) What that data looks like
+5) How much are we getting back
