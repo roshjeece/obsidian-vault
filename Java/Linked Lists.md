@@ -26,3 +26,36 @@ What's the difference between this and an ArrayList?
 
 ![[Pasted image 20260401141933.png]]
 
+Behaviors of Java
+- Java will reassign pointers automatically when you remove or add elements in the middle of the linked list
+
+```Java
+import java.util.LinkedList;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        LinkedList<String> cars = new LinkedList<>();  
+        cars.add("Volvo");  
+        cars.add("BMW");  
+        cars.add("Ford");  
+        cars.add("Mazda");  
+        System.out.println(cars);  
+  
+        cars.set(2, "TEST");  
+        System.out.println(cars);  
+  
+        cars.remove(2);  
+        System.out.println(cars);  
+  
+    }  
+}
+```
+
+Output:
+```bash
+[Volvo, BMW, Ford, Mazda]
+[Volvo, BMW, TEST, Mazda]
+[Volvo, BMW, Mazda]
+```
+
+\
