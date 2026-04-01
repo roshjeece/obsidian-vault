@@ -58,4 +58,3 @@ Output:
 [Volvo, BMW, Mazda]
 ```
 
-\
