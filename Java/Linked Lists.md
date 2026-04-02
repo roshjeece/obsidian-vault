@@ -125,6 +125,23 @@ class LinkedList {
             last.setNext(new_node);
         }
     }
+    
+    // 
+    void removeLast() {  
+    if (head == null) return;  
+    else if (head.getNext() == null) {  
+        head = null;  
+    }  
+    else {  
+        Node pointer = head;  
+        Node previous = null;  
+        while(pointer.getNext() != null) {  
+            previous = pointer;  
+            pointer = pointer.getNext();  
+        }  
+        previous.setNext(null);  
+    }  
+}
 
     // Traverses from head, prints each node
     void display() {
