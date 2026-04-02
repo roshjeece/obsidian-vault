@@ -69,9 +69,10 @@ Each layer is encapsulated. The Controller has no idea how data is stored.
 ---
 
 ## Related
-- [[Classes, Objects, and Encapsulation]] — encapsulation introduced alongside classes and objects
+- [[Classes, Objects, and Encapsulation]] — introduces encapsulation through the Employee class example; this note provides the applied foundation
 - [[Inheritance]] — access modifiers control what subclasses can see
 - [[Polymorphism]] — encapsulation enables safe polymorphic substitution
 - [[Spring Framework]] — Spring's layered architecture is encapsulation at the system level
 - [[Introduction to TDD Arrange]] — encapsulated classes are easier to unit test
 - [[Exceptions and Error Handling]] — File IO is the most common context where checked exceptions and throws declarations appear in practice
+

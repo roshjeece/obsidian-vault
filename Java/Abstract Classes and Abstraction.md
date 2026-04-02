@@ -232,4 +232,4 @@ class GrandChild extends Child { // COMPILE ERROR — func2 and func3 not implem
 - [[Encapsulation]] — abstraction and encapsulation are complementary OOP pillars; both control what is exposed to the user
 - [[Static Fields, Constructors, and this Keyword]] — abstract classes can have constructors; implicit super() behavior in abstract chains connects to constructor chaining mechanics
 - [[Exceptions and Error Handling]] — abstract method signatures and throws declarations both define contracts without providing implementation
-
+- [[Interfaces]] — the other abstraction mechanism in Java; the interface vs. abstract class tradeoff is a core design decision

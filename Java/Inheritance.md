@@ -239,3 +239,4 @@ class Hybrid extends Car{
 - [[Exceptions and Error Handling]] — exception hierarchy is a direct application of inheritance; child exception catches must come before parent catches
 - [[Spring Framework]] — Spring's component model is a direct application of the inheritance concepts in that note
 - [[Abstract Classes and Abstraction]] — abstract classes extend inheritance with enforced method contracts and instantiation restrictions
+- [[Interfaces]] — implements enforces the same full-contract rule as abstract method inheritance; useful contrast between extends and implements

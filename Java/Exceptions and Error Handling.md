@@ -232,7 +232,7 @@ Output: `Exception in thread "main" Main$MyException: This is my exception`
 
 ## Related
 - [[File IO in Java]] — File operations throw checked exceptions (e.g., `IOException`) that must be handled with try/catch or declared with `throws`
-- [[Methods, Overloading, and Classes]] — Methods declare `throws` in their signature when they propagate checked exceptions to the caller
+- [[Methods and Overloading]] — Methods declare `throws` in their signature when they propagate checked exceptions to the caller
 - [[Inheritance]] — Exception class hierarchy follows standard Java inheritance; child exceptions must be caught before parent exceptions
 - [[Polymorphism]] — Catching `Exception` works because all exceptions are subclasses; understanding polymorphism explains why parent catches can swallow child types
 - [[Arrays]] — `ArrayIndexOutOfBoundsException` and `NullPointerException` are common array-related exceptions demonstrated in this note

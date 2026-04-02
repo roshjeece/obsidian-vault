@@ -119,3 +119,4 @@ public class CountUpTo {
 ## Related
 - [[Sorting Algorithms]] — recursion is the foundation of merge sort and quicksort
 - [[Linked Lists]] — linked list traversal and search are classic recursion use cases; good cross-reference for applying recursion to data structures
+- [[Methods and Overloading]] — recursive methods are self-calling methods; the call mechanics and local variable behavior covered here are foundational

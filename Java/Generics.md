@@ -178,11 +178,11 @@ bubbleSort(employees);
 ---
 
 ## Related
-- [[Methods, Overloading, and Classes]] — generics solve the same reuse problem as overloading but more elegantly; overloading is the before, generics is the after
+- [[Methods and Overloading]] — overloading is the problem generics solve; this note provides the before picture
 - [[ArrayList]] — ArrayList is itself a generic class (`ArrayList<T>`); understanding generics explains why you specify a type in angle brackets
 - [[Sorting Algorithms]] — bubble sort is implemented here as a generic method; the sorting logic is identical, generics make it type-agnostic
 - [[Loop Practice and Binary Search]] — binary search is implemented here as a generic method using Comparable; companion note with the non-generic version
 - [[Inheritance]] — bounded type parameters use `extends` for both classes and interfaces; understanding the inheritance hierarchy clarifies what bounds are valid
 - [[Polymorphism]] — generics and polymorphism both enable code reuse across types; generics do it at compile time, polymorphism at runtime
 - [[Abstract Classes and Abstraction]] — `Comparable` is an interface that enforces a contract, similar to abstract methods; implementing `compareTo()` is the same pattern as implementing abstract methods
-
+- [[Interfaces]] — Comparable<T> is an interface; the bounded type parameter pattern depends on understanding interface contracts 

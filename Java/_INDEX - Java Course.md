@@ -16,7 +16,7 @@
 | 4   | [[Scanner, Methods, and Number Systems]]          | Scanner input, methods, PEMDAS, binary/octal/hex                            |
 | 5   | [[Conditionals and Switch Statements]]            | if/else, switch, ternary, logical operators (&&, \|\|)                      |
 | 6   | [[Loops]]                                         | Increment operators, while, for, do-while, break, continue                  |
-| 7   | [[Methods, Overloading, and Classes]]             | Method headers, parameters, return, Employee class, overloading             |
+| 7   | [[Methods and Overloading]]             | Method headers, parameters, return, Employee class, overloading             |
 | 8   | [[Static Fields, Constructors, and this Keyword]] | Constructors, static fields, this reference, UML, composition               |
 | 9   | [[Arrays]]                                        | Fixed arrays, enhanced for loop, pass by reference, matrices, binary search |
 | 10  | [[ArrayList]]                                     | Dynamic arrays, Collections.sort, Comparable interface                      |

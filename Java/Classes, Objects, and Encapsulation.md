@@ -1,121 +1,156 @@
 ---
 
 ---
-**Comparing Procedural and Object-Oriented Programming Concepts**
+**BLUF:** A class is a blueprint; an object is a specific instance of that blueprint. Encapsulation protects an object's internal state by hiding fields behind private access and exposing controlled access through public methods.
 
-- OOP was used most frequently for two major types of applications
-    - Computer simulations
-    - GUIs
-- OOP differs from traditional procedural programming
-    - Polymorphism
-    - Inheritance
-    - Encapsulation
+---
 
-Understanding Classes, Objects, and Encapsulation
+## OOP vs. Procedural Programming
 
-- Class
-    - Describes objects with common properties
-    - A definition
-    - An instance
-- Attributes
-    - Characteristics that define an object
-    - Differentiate objects of the same class
-    - The value of attributes is an object’s state
-- Objects
-    - Specific, concrete instances of a class
-- Method
-    - A self-contained block of program code that carries out an action
-    - Similar to a procedure
-- Encapsulation
+Traditional procedural programming executes instructions in sequence. OOP organizes code around objects that combine state and behavior. The three pillars of OOP:
 
-Features of the Java Programming Language
+- **Encapsulation** — bundling data and methods, restricting direct access to internal state
+- **Inheritance** — deriving new classes from existing ones
+- **Polymorphism** — one interface, multiple implementations
 
-- Java
-    - Developed by Sun Microsystems
-    - An object-oriented language
-    - General-purpose
-    - Advantages
-        - Security features
-        - Architecturally neutral
-    - Can be run on a wide variety of computers
-    - Does not execute instructions on the computer directly
-    - Runs on a hypothetical computer known as a Java Virtual Machine (JVM)
-- Source Code
-- Development environment
-    - A set of tools used to write programs
-- Bytecode
+OOP was historically adopted for two application types: computer simulations and GUIs.
 
+---
 
-**ENTERING INTELLIJ JAVA WORKSPACE**
+## Core Vocabulary
 
-Tips:
+| Term | Definition |
+|---|---|
+| **Class** | A blueprint describing objects with common properties |
+| **Object** | A specific, concrete instance of a class |
+| **Attribute / Field** | A characteristic that defines an object; its value is the object's state |
+| **Method** | A block of code that carries out an action on or for an object |
+| **Encapsulation** | Hiding internal state; exposing behavior through controlled methods |
 
-- Variable names should start with lowercase letters, not capital
+---
 
+## Class Structure
 ```java
-public class Main { // Main CLASS. Any public class has to live in a file with the same name.
-	
-	public static void main(String[] args) { // Main FUNCTION. Must be public to be seen by the OS.
-	
-	
-		int variableName = 1 ; // Semi-colon must be at the end of these statements
-		int days_of_the_week = 2 ; // use lowercase letters at beginning of var names
-		x = x + 1; /* Don't say obvious things like "incrementing by one." It's more
-		useful to say things like "pointing to the next iterm in the array."*/
-		
-		int y = 1; //declaration and initializing
-		
-		int z // declaring
-		z = 1 // and assigning 
-		
-		    /* this is a multi
-        line comment
-         */
-	}
+public class Employee {
+    // Fields (attributes) — private to enforce encapsulation
+    private String name;
+    private double salary;
+
+    // Getters (accessor methods) — read field values
+    public String getName() { return name; }
+    public double getSalary() { return salary; }
+
+    // Setters (mutator methods) — modify field values
+    public void setName(String n) { name = n; }
+    public void setSalary(double s) { salary = s; }
 }
 ```
 
-Understanding the First Class
+**Why private fields?** If fields were public, any class could read or write them directly — no validation, no control. Private fields force all access through getters and setters, where you can enforce rules (e.g., reject negative salaries).
 
-- Requirements for identifiers
-    - Can only contain letters, digits, underscores, dollar signs
-    - Cannot be a Java reserved keyword
-    - Cannot be true, false, or null
-- Upper Camel casing (Pascal casing)
-    - Each word of an identifier begins with uppercase
-- Access specifier
+---
 
-Understand aspects of the first class (public class Main)
+## Constructors
 
-Understand aspects of the main Method (pubic static void main)
+A constructor initializes a new object. It has the same name as the class and no return type. Constructors can be overloaded:
+```java
+public class Employee {
+    private String name;
+    private double salary;
 
-Indent Style
+    public Employee() {                          // default constructor
+        name = "none";
+        salary = 0;
+    }
 
-- Use whitespace to organize code
-- For every opening curly brace you need a closing curly brace
+    public Employee(String n, double s) {        // name and salary
+        setName(n);
+        setSalary(s);
+    }
 
-Compile from IntelliJ as an IDE
+    public Employee(String n) {                  // name only
+        setName(n);
+        setSalary(0);
+    }
 
-Don’t Do It!
+    public Employee(double s) {                  // salary only
+        setName("none");
+        setSalary(s);
+    }
 
-- File’s name must match public class name
-- Don’t confuse these terms:
-    - parentheses, braces, brackets, curly braces, square brackets, and angle brackets
-- Always end block comments
-- Java is case sensitive
-- End every statement with a semicolon
-- Recompile when making changes
-- Compiler errors, don’t panic
-- Don’t assume program is perfect when all compiler errors are eliminated
+    public void setName(String n) { name = n; }
+    public void setSalary(double s) { salary = s; }
+    public String getName() { return name; }
+    public double getSalary() { return salary; }
+}
+```
+```java
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("John-117", 67420.69);
+        System.out.println(emp1.getName() + " " + emp1.getSalary()); // John-117 67420.69
+
+        Employee emp2 = new Employee();
+        System.out.println(emp2.getName() + " " + emp2.getSalary()); // none 0.0
+
+        Employee emp3 = new Employee("NameOverload");
+        System.out.println(emp3.getName() + " " + emp3.getSalary()); // NameOverload 0.0
+
+        Employee emp4 = new Employee(123456.78);
+        System.out.println(emp4.getName() + " " + emp4.getSalary()); // none 123456.78
+    }
+}
+```
+
+---
+
+## Static vs. Nonstatic
+
+| | Static | Nonstatic |
+|---|---|---|
+| **Belongs to** | The class itself | A specific object instance |
+| **Called via** | Class name or directly | Must be called on an object |
+| **Use case** | Utility methods, shared state | Object behavior, instance data |
+```java
+// Static — callable without an object
+public static void display(String message) {
+    System.out.println(message);
+}
+display("hello"); // valid anywhere in the class
+
+// Nonstatic — requires an object
+public void printName() {
+    System.out.println(name);
+}
+Employee emp = new Employee();
+emp.printName(); // must call on an instance
+```
+
+> **Common error:** `Non-static field 'name' cannot be referenced from a static context` — you're trying to access an instance field from a static method. Static methods don't have a `this` reference, so they can't see instance fields.
+
+---
+
+## Java Basics Reference
+
+| Concept | Note |
+|---|---|
+| File name | Must match the public class name exactly |
+| Statements | End with a semicolon |
+| Case sensitivity | Java is case sensitive — `Name` and `name` are different |
+| Variable naming | Start with lowercase; use camelCase |
+| Identifiers | Letters, digits, `_`, `$` only; no reserved keywords |
+| Casing convention | Classes use UpperCamelCase; variables/methods use lowerCamelCase |
+| JVM | Java compiles to bytecode, runs on the Java Virtual Machine — not directly on hardware |
 
 ---
 
 ## Related
-- [[Programming Fundamentals and OOP Introduction]] — procedural vs OOP context that precedes this note
-- [[Methods, Overloading, and Classes]] — methods and constructors build directly on class fundamentals
-- [[Static Fields, Constructors, and this Keyword]] — extends encapsulation with static fields and constructor patterns
+- [[Methods and Overloading]] — methods and constructors build directly on class structure; overloaded constructors follow the same rules as overloaded methods
+- [[Static Fields, Constructors, and this Keyword]] — extends this note with static fields, this keyword, and constructor chaining patterns
+- [[Encapsulation]] — dedicated note on encapsulation principles; this note introduces the concept, that note goes deeper
 - [[Inheritance]] — inheritance builds on the class/object model established here
 - [[Polymorphism]] — polymorphism requires understanding of classes and objects first
+- [[Abstract Classes and Abstraction]] — abstract classes are a specialized form of class; builds directly on this note
+- [[Interfaces]] — interfaces define class contracts; understanding class structure is prerequisite
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
-- [[Spring Boot - Services]] — the service layer is encapsulation applied at architecture scale
-- [[Abstract Classes and Abstraction]] — abstract classes build directly on class structure; useful cross-reference for OOP design
