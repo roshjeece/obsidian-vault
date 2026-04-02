@@ -105,6 +105,12 @@ class LinkedList {
         new_node.setNext(head);
         head = new_node;
     }
+    
+    // Removes first node by reassigning the head to the node at index 1
+    void removeFirst() {  
+    if (head == null) return;  
+    head = head.getNext();  
+	}
 
     // Traverses to the last node, then appends
     void addLast(int data) {
@@ -142,6 +148,18 @@ class LinkedList {
 2. If the list is empty, the new node becomes `head`
 3. Otherwise, traverse until `getNext() == null` (end of list)
 4. Set the last node's `next` to the new node
+
+### How removeFirst() works
+1. Checks to see there are any nodes
+2. If the list isn't empty, the node at index 1 becomes the new head
+3. The original head is dropped
+
+### How removeLast() works
+1. Checks if the head is empty
+2. Checks if there's only one node
+	1. If only one node, removes that node
+3. If 2+ nodes, then
+4. Create two nodes to traverse with a trailing pointer, then sever the last node
 
 ---
 
