@@ -428,3 +428,4 @@ public class Main {
 - [[Variables, Data Types, and Scope]] — foundational Java concepts that precede loops
 - [[Sorting Algorithms]] — bubble sort uses nested loops as its core mechanism
 - [[udemy Java]] — loops covered in Udemy self-study track as well
+- [[Linked Lists]] — linked list traversal is a practical while-loop application using object references instead of an index

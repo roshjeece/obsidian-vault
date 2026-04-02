@@ -178,3 +178,4 @@ public class Student implements Comparable<Student>{
 - [[Arrays]] — ArrayList is the dynamic alternative to fixed arrays
 - [[Sorting Algorithms]] — ArrayLists can be sorted using Collections utility
 - [[Spring Framework]] — Spring repositories return Lists of entities
+- [[Linked Lists]] — direct structural and performance contrast; reinforces when to choose each collection type

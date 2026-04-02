@@ -155,17 +155,4 @@ class LinkedList {
 
 ## Suggested Backlinks
 
-**ArrayList**
-```
-[[Linked Lists]] — direct structural and performance contrast; reinforces when to choose each collection type
-```
 
-**Loops**
-```
-[[Linked Lists]] — linked list traversal is a practical while-loop application using object references instead of an index
-```
-
-**Recursion**
-```
-[[Linked Lists]] — linked list traversal and search are classic recursion use cases; good cross-reference for applying recursion to data structures
-```
