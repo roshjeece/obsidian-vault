@@ -145,5 +145,4 @@ newArray[i + j] = (arr1[i] < arr2[j]) ? arr1[i++] : arr2[j++];
 ## Related
 - [[Loops]] — loops use conditional logic for their continuation checks
 - [[Variables, Data Types, and Scope]] — boolean conditions rely on correct data types
-- [[Conditionals, toString, and CPU Execution]] — if/else extended with sequential execution examples
 - [[Introduction to TDD Arrange]] — conditionals are tested using assertTrue/assertFalse

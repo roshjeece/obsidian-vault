@@ -18,14 +18,13 @@
 | 6   | [[Loops]]                                         | Increment operators, while, for, do-while, break, continue                  |
 | 7   | [[Methods, Overloading, and Classes]]             | Method headers, parameters, return, Employee class, overloading             |
 | 8   | [[Static Fields, Constructors, and this Keyword]] | Constructors, static fields, this reference, UML, composition               |
-| 9   | [[Conditionals, toString, and CPU Execution]]     | toString override, sequential execution, CPU prediction                     |
-| 10  | [[Arrays]]                                        | Fixed arrays, enhanced for loop, pass by reference, matrices, binary search |
-| 11  | [[ArrayList]]                                     | Dynamic arrays, Collections.sort, Comparable interface                      |
-| 12  | [[Sorting Algorithms]]                            | Bubble sort O(n²), merge sort O(n log n), two-pointer technique             |
-| 13  | [[Recursion]]                                     | Base case, recursive case, factorial, Fibonacci, practice problems          |
-| 14  | [[Inheritance]]                                   | extends, overriding vs overloading, upcasting, instanceof, access modifiers |
-| 15  | [[Polymorphism]]                                  | Dynamic dispatch, multiple behaviors, method resolution order               |
-| 16  | [[File IO in Java]]                               | FileWriter, Scanner file read, applied to Employee export/import            |
+| 9   | [[Arrays]]                                        | Fixed arrays, enhanced for loop, pass by reference, matrices, binary search |
+| 10  | [[ArrayList]]                                     | Dynamic arrays, Collections.sort, Comparable interface                      |
+| 11  | [[Sorting Algorithms]]                            | Bubble sort O(n²), merge sort O(n log n), two-pointer technique             |
+| 12  | [[Recursion]]                                     | Base case, recursive case, factorial, Fibonacci, practice problems          |
+| 13  | [[Inheritance]]                                   | extends, overriding vs overloading, upcasting, instanceof, access modifiers |
+| 14  | [[Polymorphism]]                                  | Dynamic dispatch, multiple behaviors, method resolution order               |
+| 15  | [[File IO in Java]]                               | FileWriter, Scanner file read, applied to Employee export/import            |
 
 ---
 

@@ -423,3 +423,7 @@ It’s a private class level variable.
 All of [Employee.java](http://employee.java/) is a class.
 
 Me calling Employee emp1 = new Employee() is the object
+
+
+## Related
+- [[Generics]] — generics are the type-safe alternative to overloading identical methods across data types

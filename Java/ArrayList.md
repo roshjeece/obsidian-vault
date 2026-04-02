@@ -179,3 +179,4 @@ public class Student implements Comparable<Student>{
 - [[Sorting Algorithms]] — ArrayLists can be sorted using Collections utility
 - [[Spring Framework]] — Spring repositories return Lists of entities
 - [[Linked Lists]] — direct structural and performance contrast; reinforces when to choose each collection type
+- [[Generics]] — ArrayList is a generic class; this note explains the mechanics behind the <T> syntax used in ArrayList declarations

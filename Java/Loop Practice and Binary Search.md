@@ -101,4 +101,4 @@ public class Main {
 - [[Arrays]] — binary search operates on sorted arrays
 - [[Sorting Algorithms]] — binary search requires a sorted array; pairs with sort algorithms
 - [[Conditionals and Switch Statements]] — input validation uses conditional logic
-
+- [[Generics]] — generic binary search implementation using Comparable; compare with the non-generic version in this note
