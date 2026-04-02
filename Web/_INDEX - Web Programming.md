@@ -1,8 +1,8 @@
-# Beginning Web Programming
+# _INDEX - Beginning Web Programming
 
 **Instructor:** Jon-Mikel (JM)
 **Track:** Front End → React → Spring Boot Capstone
-**Stack:** HTML, CSS, JavaScript, Bootstrap, TypeScript, Node
+**Stack:** HTML, CSS, JavaScript, Bootstrap, TypeScript, Node, React, MUI
 
 ---
 
@@ -24,14 +24,28 @@
 
 ---
 
-## Key Concepts to Master
+## Supplemental Notes
 
-- **CSS specificity:** inline > internal > external, id > class > tag
-- **DOM manipulation:** select → manipulate — always starts with `document`
-- **JavaScript scope:** `var` vs `let` vs `const`, block scope
-- **Bootstrap grid:** every row is 12 columns, columns must sum to 12
-- **Event listeners:** `addEventListener`, `preventDefault`, form handling
-- **APIs:** consuming vs serving, endpoints, HTTP methods, JSON
+| Note | Description |
+|---|---|
+| [[HTML]] | HTML structure and semantics |
+| [[Fat Arrow Function]] | Arrow function syntax, implicit returns, this binding |
+| [[React]] | Components, JSX, props, state, MUI overview |
+| [[React - Implementing Endpoint & APIs]] | fetch + useState pattern for consuming REST APIs |
+| [[React - Routing and State Management]] | React Router setup, useState toggle patterns |
+| [[Presentation Notes]] | Course presentation notes |
+
+---
+
+## Key Concepts to Master
+- CSS specificity: inline > internal > external, id > class > tag
+- DOM manipulation: select → manipulate — always starts with `document`
+- JavaScript scope: `var` vs `let` vs `const`, block scope
+- Bootstrap grid: every row is 12 columns, columns must sum to 12
+- Event listeners: `addEventListener`, `preventDefault`, form handling
+- APIs: consuming vs serving, endpoints, HTTP methods, JSON
+- React: component composition, props, state, hooks
+- TypeScript: type annotations, tsconfig, npx tsc compile workflow
 
 ---
 
@@ -39,4 +53,4 @@
 - [[Spring Framework]] — backend counterpart to this frontend course
 - [[Database Creation and Schema Design]] — PostgreSQL required for capstone
 - [[Introduction to TDD Arrange]] — TDD applies to JavaScript as well as Java
-- [[Git]] — Git introduced in this course and used throughout
+- [[Git]] — introduced in week 1 and used throughout
