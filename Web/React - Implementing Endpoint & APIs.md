@@ -149,11 +149,4 @@ Install with: `npm install axios`
 - [[React]] — component structure, JSX rules, props and state fundamentals
 - [[Spring Framework]] — same fetch/axios pattern used to consume your Spring Boot REST API in the capstone
 - [[Final Project Contextualization]] — capstone will use this fetch + useState pattern against a real backend
-
-## Suggested Backlinks
-
-
-**Spring Framework**
-```
-- [[React - Implementing Endpoint & APIs]] — demonstrates how the React frontend consumes Spring Boot API endpoints using fetch and axios
-```
+- [[React - Routing and State Management]] — useState pattern from the hide/show example directly parallels state used to store fetched data

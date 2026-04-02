@@ -428,3 +428,4 @@ See more: [Agile Manifesto](https://agilemanifesto.org/iso/en/principles.html)
 - [[Spring Boot - Annotations Reference]] — test annotations are the implementation of TDD concepts
 - [[Spring Boot - Controllers and REST]] — the controller TODO pattern (write test first, then implement) is direct TDD application
 - [[Spring Boot - Services]] — service tests are the primary target for unit testing with mocks
+- [[Fat Arrow Function]] — arrow functions are the standard callback syntax passed to Jest's test() and describe() blocks

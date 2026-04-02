@@ -41,7 +41,7 @@ Topics covered in Friday sessions that span multiple courses:
 ## Related
 - [[General Skills]] — self-directed learning track
 - [[_INDEX - Java Course]] — primary course using these skills
-- [[_INDEX - Beginning Web Programming]] — web course using these skills
+- [[_INDEX - Web Programming]] — web course using these skills
 - [[_INDEX - SQL Course]] — SQL course using these skills
 
 ---

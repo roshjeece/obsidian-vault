@@ -263,3 +263,4 @@ console.log(age > 21 ? "Yeah!!!" : "Booo!!!") // Output: Yeah!!!
 - [[JavaScript - Strings, Arrays, Objects]] — extends core JS with data structures
 - [[JavaScript - DOM]] — DOM manipulation builds on JS fundamentals
 - [[Introduction to TDD Arrange]] — TDD principles apply to JavaScript as well as Java
+- [[Fat Arrow Function]] — dedicated reference for arrow function syntax, implicit returns, and this binding behavior

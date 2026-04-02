@@ -123,3 +123,5 @@ Common MUI components to know: `Button`, `TextField`, `Box`, `Typography`, `Stac
 - [[Spring Framework]] — React frontend pairs with Spring Boot backend in the capstone
 - [[Final Project Contextualization]] — capstone requires React + MUI specifically
 - [[React - Implementing Endpoint & APIs]] — fetch + useState pattern for consuming REST APIs; core to the capstone
+- [[React - Routing and State Management]] — React Router setup and useState toggle pattern; extends core component concepts
+- [[Fat Arrow Function]] — arrow functions are used for component definitions and event handlers throughout React

@@ -127,26 +127,8 @@ function Timer() {
 ---
 
 ## Related
-- [[JavaScript]] — arrow functions are a core JS syntax feature
+- [[JavaScript - Introduction]] — arrow functions are a core JS syntax feature
 - [[JavaScript - Strings, Arrays, Objects]] — arrow functions used heavily with array methods like map, filter, reduce
 - [[React]] — arrow functions are the standard syntax for components and event handlers
 - [[Introduction to TDD Arrange]] — arrow functions are the standard callback syntax in Jest tests
-```
-
----
-
-## Suggested Backlinks
-
-**JavaScript**
-```
-- [[Fat Arrow Functions]] — dedicated reference for arrow function syntax, implicit returns, and this binding behavior
-```
-
-**Introduction to TDD Arrange**
-```
-- [[Fat Arrow Functions]] — arrow functions are the standard callback syntax passed to Jest's test() and describe() blocks
-```
-
-**React**
-```
-- [[Fat Arrow Functions]] — arrow functions are used for component definitions and event handlers throughout React
+- [[React - Routing and State Management]] — arrow functions used for all component definitions and event handlers in routing and state examples
