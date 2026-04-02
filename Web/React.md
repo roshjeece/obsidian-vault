@@ -122,3 +122,4 @@ Common MUI components to know: `Button`, `TextField`, `Box`, `Typography`, `Stac
 - [[TypeScript]] — React can be written in TypeScript; same tsconfig/npm workflow applies
 - [[Spring Framework]] — React frontend pairs with Spring Boot backend in the capstone
 - [[Final Project Contextualization]] — capstone requires React + MUI specifically
+- [[React - Implementing Endpoint & APIs]] — fetch + useState pattern for consuming REST APIs; core to the capstone

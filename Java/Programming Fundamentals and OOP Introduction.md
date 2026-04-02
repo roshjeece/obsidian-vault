@@ -1,107 +1,83 @@
 ---
 
 ---
-Instructor: Amr Elchouemi
+# Programming Fundamentals and OOP Introduction
 
-Code cannot live outside of class
+**BLUF:** Java is object-oriented — all code lives inside a class. Before writing Java, you need to understand three logic types: sequential, conditional, and iterative. This note frames the conceptual shift from procedural to OOP thinking.
 
-To write Java correctly, you must know how to:
+---
 
-1. How to write sequential logic
-2. How to write conditional logic
-3. How to write iterative logic
+## Three Logic Types in Java
 
-[www.w3schools.com](http://www.w3schools.com/) —> Use this to learn Java
+| Type | What It Means |
+|---|---|
+| **Sequential** | Instructions execute top to bottom in order |
+| **Conditional** | Execution branches based on a condition |
+| **Iterative** | A block of code repeats until a condition is met |
 
-[geeksforgeekks.org/java/java](http://geeksforgeekks.org/java/java) —> Consider this one as well
+---
 
-Everything in a computational device works on a transistor
+## Key Vocabulary
 
-High-level programming language
+**High-level programming language** — lets you write in human-readable terms rather than machine code.
 
-- Allows you to use a vocabulary of reasonable terms
+**Syntax** — the specific rules of a language. Violating them produces a syntax error.
 
-Syntax
+**Compiler** — translates your entire program into machine code at once before execution. Java uses a compiler to produce bytecode, which then runs on the JVM.
 
-- A specific set of rules for the language
+**Syntax error** — misuse of language rules (misspelled keyword, missing semicolon). Caught at compile time.
 
-Program statements
+**Logic error (semantic error)** — the program runs but produces incorrect output. The syntax is valid but the logic is wrong.
 
-- Similar to English sentences
-- Commands to carry out program tasks
+**Debugging** — the process of finding and fixing all errors in a program.
 
-Compiler or interpreter
+---
 
-- Translates language statements into machine code
-- Compiler:
-    - Must write whole program, then compile
-    - Book written in one language, disappears, comes back as different language
-- Interpreter:
-    - Think of interpreter between two people who speak different languages
-    - Interpretive or scripting languages
+## Procedural vs. Object-Oriented Programming
 
-Syntax Error
+### Procedural
+Code is organized as a sequence of instructions and procedures that operate on separate data.
 
-- Misuse of language rules
-- A misspelled programming language word
+- Focus is on functions/procedures
+- Data and functions are kept separate
+- Flows linearly, top to bottom
+- Works well for smaller, straightforward programs
 
-Debugging
+> Think of a recipe: ingredients are your variables, steps are your procedures, executed in order.
 
-- Freeing program of all errors
+### Object-Oriented (OOP)
+Code is organized around objects — entities that bundle both data and the behavior that operates on that data.
 
-Logic errors
-
-- Also called semantic errors
-- Incorrect order or procedure
-- The program may run but provide inaccurate output
-
-Procedural Programming
-
-- Sets of operations executed in sequence
-- Variables
-    - Named computer memory locations that hold values
-- Procedures
-    - Individual operations grouped into logical units
-
-Object-oriented programs
-
-- Create classes
-    - Blueprints for an object
-- Create objects from classes
-- Create applications
-
-## Understanding Procedural vs Object-Oriented Programming
-
-### Procedural Programming
-
-Procedural programming is like following a recipe step-by-step. You write a sequence of instructions that the computer executes from top to bottom.
-
-**Key characteristics:**
-
-- Focus is on **functions/procedures** that operate on data
-- Data and functions are **separate**
-- Program flows in a linear, sequential manner
-- Good for smaller, straightforward programs
-
-**Example analogy:** Think of it like a cooking recipe where you have ingredients (variables) and steps (procedures) that you follow in order.
-
-### Object-Oriented Programming (OOP)
-
-Object-oriented programming organizes code around "objects" that combine both data and the functions that work with that data.
-
-**Key characteristics:**
-
-- Focus is on **objects** that represent real-world entities
-- Data and functions are **bundled together** in classes
+- Focus is on objects that model real-world entities
+- Data and behavior are bundled together in classes
 - Objects interact with each other to accomplish tasks
-- Better for larger, more complex programs
+- Scales better for larger, more complex programs
 
-**Example analogy:** Think of it like building with LEGO blocks. Each block (object) is created from a blueprint (class) and has its own properties and capabilities. You combine these blocks to build something larger.
+> Think of LEGO blocks: each block (object) is built from a blueprint (class) and has its own properties and capabilities. You combine blocks to build something larger.
 
-### Simple Comparison
+### The Core Distinction
 
-**Procedural:** "Here's some data. Here are steps to process it."
+| | Procedural | OOP |
+|---|---|---|
+| **Unit of organization** | Function / procedure | Class / object |
+| **Data and behavior** | Separate | Bundled together |
+| **Scales to complexity** | Harder | Better |
 
-**OOP:** "Here's a thing (object) that has both data and knows how to process itself."
+Procedural: *"Here's some data. Here are steps to process it."*
+OOP: *"Here's an object that has data and knows how to process itself."*
 
-**In Java:** Java is primarily an object-oriented language, which means even simple programs require you to create at least one class. This is why "code cannot live outside of class" in Java!
+---
+
+## Java Is OOP
+
+In Java, all code must live inside a class — even `main()`. This is not optional. Java is primarily object-oriented, which means the class is the fundamental unit of organization for every program you write.
+
+---
+
+## Related
+- [[Classes, Objects, and Encapsulation]] — the direct next step; translates OOP concepts into Java class syntax
+- [[Inheritance]] — one of the three OOP pillars introduced here; builds on the class/object model
+- [[Polymorphism]] — second OOP pillar; requires understanding classes and objects first
+- [[Encapsulation]] — third OOP pillar; introduced conceptually here, applied in depth there
+- [[Conditionals and Switch Statements]] — conditional logic, one of the three logic types listed here
+- [[Loops]] — iterative logic, one of the three logic types listed here

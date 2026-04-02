@@ -143,23 +143,17 @@ Install with: `npm install axios`
 ---
 
 ## Related
-- [[React]] — component structure, JSX rules, props and state fundamentals
-- [[JavaScript]] — Promises, arrow functions, and destructuring used throughout
+- [[JavaScript - Introduction]] — Promises, arrow functions, and destructuring used throughout
 - [[JavaScript - Strings, Arrays, Objects]] — JSON response data maps directly to JS objects
 - [[JavaScript - DOM]] — React is abstracting DOM updates that would otherwise be manual
+- [[React]] — component structure, JSX rules, props and state fundamentals
 - [[Spring Framework]] — same fetch/axios pattern used to consume your Spring Boot REST API in the capstone
 - [[Final Project Contextualization]] — capstone will use this fetch + useState pattern against a real backend
-```
-
----
 
 ## Suggested Backlinks
 
-**React**
-```
-- [[React - API Fetching and useState]] — fetch + useState pattern for consuming REST APIs; core to the capstone
-```
 
 **Spring Framework**
 ```
-- [[React - API Fetching and useState]] — demonstrates how the React frontend consumes Spring Boot API endpoints using fetch and axios
+- [[React - Implementing Endpoint & APIs]] — demonstrates how the React frontend consumes Spring Boot API endpoints using fetch and axios
+```

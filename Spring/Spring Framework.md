@@ -288,3 +288,4 @@ Each layer has a corresponding test type. Using the wrong one either loads too m
 - [[Java/Inheritance]] — Spring relies heavily on interface implementation and class hierarchies
 - [[Java/Polymorphism]] — Spring's dependency injection uses polymorphic references
 - [[ADR-001-postgresql-over-h2]] — the decision that shapes which datasource this app connects to
+- [[React - Implementing Endpoint & APIs]] — demonstrates how the React frontend consumes Spring Boot API endpoints using fetch and axios

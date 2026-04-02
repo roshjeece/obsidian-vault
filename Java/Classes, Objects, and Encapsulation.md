@@ -154,3 +154,4 @@ emp.printName(); // must call on an instance
 - [[Abstract Classes and Abstraction]] — abstract classes are a specialized form of class; builds directly on this note
 - [[Interfaces]] — interfaces define class contracts; understanding class structure is prerequisite
 - [[Introduction to TDD Arrange]] — encapsulation affects how classes are structured for testability
+- [[Programming Fundamentals and OOP Introduction]] — establishes the procedural vs. OOP framing that motivates class-based design

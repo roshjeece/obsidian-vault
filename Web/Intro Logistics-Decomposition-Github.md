@@ -76,6 +76,5 @@ New Git Information:
 - Avoid: `git add .` - Why?
 ## Related
 - [[Decomposition]] — decomposition covered in this session
-- [[Git]] — Git introduced here in web course context
-- [[Git]] — detailed Git concepts
+- [[Git]] — Git introduced here in web course context, detailed Git concepts
 - [[Final Project Contextualization]] — course roadmap referenced here

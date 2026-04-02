@@ -75,4 +75,4 @@ Each layer is encapsulated. The Controller has no idea how data is stored.
 - [[Spring Framework]] — Spring's layered architecture is encapsulation at the system level
 - [[Introduction to TDD Arrange]] — encapsulated classes are easier to unit test
 - [[Exceptions and Error Handling]] — File IO is the most common context where checked exceptions and throws declarations appear in practice
-
+- [[Programming Fundamentals and OOP Introduction]] — introduces encapsulation as an OOP pillar before the concept is applied in depth

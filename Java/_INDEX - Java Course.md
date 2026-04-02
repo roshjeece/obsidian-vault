@@ -25,6 +25,11 @@
 | 13  | [[Inheritance]]                                   | extends, overriding vs overloading, upcasting, instanceof, access modifiers |
 | 14  | [[Polymorphism]]                                  | Dynamic dispatch, multiple behaviors, method resolution order               |
 | 15  | [[File IO in Java]]                               | FileWriter, Scanner file read, applied to Employee export/import            |
+| 16  | [[Exceptions and Error Handling]]                 | try/catch/finally, throw, exception hierarchy, custom exceptions          |
+| 17  | [[Abstract Classes and Abstraction]]              | abstract keyword, abstract methods, contract enforcement, constructor chain  |
+| 18  | [[Interfaces]]                                    | interface syntax, implements, default and static methods, Comparable        |
+| 19  | [[Generics]]                                      | type parameters, generic classes/methods, bounded types, Comparable        |
+| 20  | [[Linked Lists]]                                  | LinkedList vs ArrayList, node structure, manual implementation              |
 
 ---
 
