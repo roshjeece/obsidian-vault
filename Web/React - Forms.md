@@ -28,4 +28,8 @@ Action: /doggyHorse
 Difference with React:
 - No default action
 - You have to control the actions from within the Form, you must dictate what will happen
-- You do not use an action with
+- You do not use an action within React
+- Everything is **event based** within React (e.g., **onClick**)
+
+**onSubmit**
+- 
