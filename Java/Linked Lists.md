@@ -187,3 +187,5 @@ class LinkedList {
 - [[Classes, Objects, and Encapsulation]] — the manual implementation is a direct application of class design, encapsulation, and object references
 - [[Static Fields, Constructors, and this Keyword]] — `Node` and `LinkedList` constructors and use of `this` follow patterns established here
 - [[Recursion]] — linked list traversal has a natural recursive structure; `display()` and search operations are common recursion examples
+- [[Stacks and Deques]] — stack-based bracket validator uses the same push/pop/traverse pattern as linked list pointer manipulation
+- [[Queues]] — queue implemented as a linked list; same Node structure, different pointer semantics (front/rear vs. head)

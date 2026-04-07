@@ -92,3 +92,4 @@ Key concepts: two-pointer technique, draining remaining elements, ternary operat
 - [[Sorting Algorithms]] — merge sort is a direct application of sorting algorithm concepts
 - [[Arrays]] — sorting operates on arrays
 - [[Generics]] — generic bubble sort implementation here makes the algorithm reusable across any Comparable type
+- [[Queues]] — queues are the underlying structure for breadth-first traversal and certain sorting approaches
