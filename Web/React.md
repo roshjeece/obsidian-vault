@@ -125,3 +125,4 @@ Common MUI components to know: `Button`, `TextField`, `Box`, `Typography`, `Stac
 - [[React - Implementing Endpoint & APIs]] — fetch + useState pattern for consuming REST APIs; core to the capstone
 - [[React - Routing and State Management]] — React Router setup and useState toggle pattern; extends core component concepts
 - [[Fat Arrow Function]] — arrow functions are used for component definitions and event handlers throughout React
+- [[React - Forms]] — controlled form pattern with single state object, handleChange, and POST via fetch

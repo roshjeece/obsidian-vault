@@ -130,3 +130,4 @@ export default App
 - [[Forms, Navigation, and DOM Basics]] — vanilla JS form/navigation patterns that React Router replaces
 - [[JavaScript - DOM]] — understanding what React Router is abstracting at the browser level
 - [[CSS - Bootstrap]] — Bootstrap navbar pattern referenced in routing practice
+- [[React - Forms]] — multi-field object state is a direct extension of the boolean toggle pattern introduced here

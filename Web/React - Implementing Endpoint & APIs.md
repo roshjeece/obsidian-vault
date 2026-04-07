@@ -150,3 +150,4 @@ Install with: `npm install axios`
 - [[Spring Framework]] — same fetch/axios pattern used to consume your Spring Boot REST API in the capstone
 - [[Final Project Contextualization]] — capstone will use this fetch + useState pattern against a real backend
 - [[React - Routing and State Management]] — useState pattern from the hide/show example directly parallels state used to store fetched data
+- [[React - Forms]] — extends the fetch POST pattern to form submission with JSON body and headers
