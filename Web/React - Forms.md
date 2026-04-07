@@ -20,6 +20,7 @@ const App = () => {
 }  
 export default App;
 ```
+
 Action: /doggyHorse
 - GET Request
 - The /doggyHorse is telling your server what to do
@@ -31,5 +32,23 @@ Difference with React:
 - You do not use an action within React
 - Everything is **event based** within React (e.g., **onClick**)
 
-**onSubmit**
-- 
+Handling Changes
+- You don't want to have to manage the states and data of MANY fields on a form
+- Handle changes within one function
+
+```jsx
+const App = () => {  
+  
+    const initialData = {  
+        fname: "",  
+        password: "",  
+        age: 0  
+    }  
+  
+    const [data, setData] = useState(initialData)  
+    
+    const handleChange = (evt) => {  
+        setData({...data, [evt.target.name]: evt.target.value})  
+        console.log(data)  
+    }
+```
