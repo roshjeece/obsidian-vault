@@ -54,7 +54,7 @@ const App = () => {
 ```
 
 
-How Fetch Would Look:
+How Fetch Would Look :
 ```
 fetch(endpoint, options)  
     .then(response)  
