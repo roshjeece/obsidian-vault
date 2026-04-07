@@ -1,8 +1,8 @@
 ## High Priority:
-- [ ] Create project pitch
+- [x] Create project pitch
 
 ## Medium Priority:
-- [ ] Book Easter Ticket
+- [x] Book Easter Ticket
 - [ ] Drop additional subscriptions not needed
 - [ ] Register for Houston Marathon
 - [ ] Grocery shopping
