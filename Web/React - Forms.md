@@ -52,3 +52,12 @@ const App = () => {
         console.log(data)  
     }
 ```
+
+
+How Fetch Would Look:
+```
+fetch(endpoint, options)  
+    .then(response)  
+    .then(parsedData)  
+    .catch(errors)
+```
