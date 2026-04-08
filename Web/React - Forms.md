@@ -215,3 +215,4 @@ export default App
 - [[Forms, Navigation, and DOM Basics]] — vanilla JS form handling that React replaces
 - [[HTML]] — HTML form elements and attributes that carry over into JSX
 - [[Fat Arrow Function]] — arrow functions used for all handlers in this note
+- [[React - Hook Form and Yup]] — RHF + Yup replaces the manual useState/handleChange pattern used here

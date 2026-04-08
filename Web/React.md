@@ -126,3 +126,4 @@ Common MUI components to know: `Button`, `TextField`, `Box`, `Typography`, `Stac
 - [[React - Routing and State Management]] — React Router setup and useState toggle pattern; extends core component concepts
 - [[Fat Arrow Function]] — arrow functions are used for component definitions and event handlers throughout React
 - [[React - Forms]] — controlled form pattern with single state object, handleChange, and POST via fetch
+- [[React - Hook Form and Yup]] — advanced form management using the useForm hook and Yup schema validation
