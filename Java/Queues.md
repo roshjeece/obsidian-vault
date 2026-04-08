@@ -140,10 +140,129 @@ public class Main {
 
 ---
 
+## Array-Based Circular Queue
+
+A queue can also be implemented using a fixed-size array. The challenge with a naive array queue is that `dequeue()` leaves empty slots at the front that can't be reused without shifting every element. A **circular queue** solves this with modulo arithmetic — when a pointer reaches the end of the array, it wraps back to index 0.
+
+### Key Fields
+
+| Field | Purpose |
+|---|---|
+| `queueArray` | The fixed-size backing array |
+| `front` | Index of the next element to dequeue |
+| `rear` | Index where the next element will be enqueued |
+| `size` | Current number of elements |
+| `capacity` | Maximum number of elements |
+
+`front` and `rear` start at 0 and advance independently using `(pointer + 1) % capacity` to wrap around.
+
+### Implementation
+
+```java
+public class QueueArray {
+    private int[] queueArray;
+    private int front;
+    private int rear;
+    private int size;
+    private int capacity;
+
+    public QueueArray(int capacity) {
+        size = 0;
+        this.capacity = capacity;
+        queueArray = new int[capacity];
+        this.front = 0;
+        this.rear = 0;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public boolean isFull() {
+        return size == capacity;
+    }
+
+    // Add to rear, then advance rear with wrap-around
+    public void enqueue(int data) {
+        if (isFull()) {
+            System.out.println("Queue is full.");
+            return;
+        }
+        queueArray[rear] = data;
+        rear = (rear + 1) % capacity; // wrap rear back to 0 when it hits capacity
+        size++;
+    }
+
+    // View front without removing
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Empty queue");
+            return -1;
+        }
+        return queueArray[front];
+    }
+
+    // Remove from front, then advance front with wrap-around
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Empty queue");
+            return -1;
+        }
+        int data = queueArray[front];
+        front = (front + 1) % capacity; // same wrap-around logic as enqueue
+        size--;
+        return data;
+    }
+
+    // Traverse size elements starting from front, wrapping as needed
+    public void display() {
+        if (isEmpty()) return;
+        int temp = front;
+        for (int i = 0; i < size; i++) {
+            System.out.println(queueArray[temp]);
+            temp = (temp + 1) % capacity;
+        }
+        System.out.println("-----");
+    }
+}
+```
+
+### The Wrap-Around Mechanic
+
+```java
+rear = (rear + 1) % capacity;
+```
+
+When `rear` reaches the end of the array, `% capacity` resets it to 0 — reusing slots freed by previous dequeues. Without this, the rear pointer would eventually run off the end of the array even if space exists at the front.
+
+Example with capacity 4:
+
+| Step | Action | front | rear | Contents |
+|---|---|---|---|---|
+| Start | — | 0 | 0 | `[ _, _, _, _ ]` |
+| enqueue(1) | — | 0 | 1 | `[ 1, _, _, _ ]` |
+| enqueue(2) | — | 0 | 2 | `[ 1, 2, _, _ ]` |
+| dequeue() | returns 1 | 1 | 2 | `[ _, 2, _, _ ]` |
+| enqueue(3) | — | 1 | 3 | `[ _, 2, 3, _ ]` |
+| enqueue(4) | — | 1 | 0 | `[ _, 2, 3, 4 ]` |
+| enqueue(5) | rear wraps to 0 | 1 | 1 | `[ 5, 2, 3, 4 ]` |
+
+### Linked List Queue vs. Circular Array Queue
+
+| | Linked List Queue | Circular Array Queue |
+|---|---|---|
+| **Capacity** | Unbounded | Fixed at construction |
+| **Memory** | Allocates per node | Pre-allocates full array |
+| **Wrap-around** | Not needed | Required — modulo arithmetic |
+| **Overhead** | Node objects + pointers | None beyond the array |
+| **Use when** | Size is unknown | Size is known and bounded |
+
+---
+
 ## Related
 - [[Stacks and Deques]] — LIFO counterpart; ArrayDeque supports both stack and queue operations from the same class
 - [[Linked Lists]] — queue is implemented as a linked list here; Node structure and traversal pattern are identical
 - [[Loops]] — queue traversal in `display()` uses the same while loop pointer pattern as linked list traversal
 - [[Sorting Algorithms]] — queues appear in breadth-first search and certain sorting algorithms as the underlying data structure
-- [[Arrays]] — array-based queue is an alternative implementation; linked list queue avoids element shifting on dequeue
+- [[Arrays]] — the circular queue uses a fixed-size array as its backing structure; modulo arithmetic replaces pointer traversal for wrap-around
 - [[Stacks and Deques]] — LIFO counterpart; ArrayDeque supports both stack and queue operations from the same class

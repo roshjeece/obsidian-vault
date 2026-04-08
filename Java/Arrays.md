@@ -711,3 +711,4 @@ public class Main {
 - [[Sorting Algorithms]] — sorting algorithms operate on arrays
 - [[ArrayList]] — ArrayList is the dynamic alternative to fixed arrays
 - [[Exceptions and Error Handling]] — array operations are a primary source of runtime exceptions (ArrayIndexOutOfBoundsException, NullPointerException)
+- [[Queues]] — circular array queue uses modulo arithmetic on a fixed array to implement FIFO without element shifting
