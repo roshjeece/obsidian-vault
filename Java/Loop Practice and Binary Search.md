@@ -102,3 +102,4 @@ public class Main {
 - [[Sorting Algorithms]] — binary search requires a sorted array; pairs with sort algorithms
 - [[Conditionals and Switch Statements]] — input validation uses conditional logic
 - [[Generics]] — generic binary search implementation using Comparable; compare with the non-generic version in this note
+- [[Binary Search Trees]] — BST applies the same halving logic as binary search but to a dynamic tree structure instead of a sorted array

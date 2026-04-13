@@ -189,3 +189,5 @@ class LinkedList {
 - [[Recursion]] — linked list traversal has a natural recursive structure; `display()` and search operations are common recursion examples
 - [[Stacks and Deques]] — stack-based bracket validator uses the same push/pop/traverse pattern as linked list pointer manipulation
 - [[Queues]] — queue implemented as a linked list; same Node structure, different pointer semantics (front/rear vs. head)
+- [[Trees]] — tree nodes extend the linked list node pattern from one next pointer to two child pointers (left/right)
+- [[Binary Search Trees]] — BST trailing pointer pattern mirrors linked list traversal; both structures navigate via node references
