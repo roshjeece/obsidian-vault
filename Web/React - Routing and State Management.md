@@ -1,5 +1,3 @@
-# React - Routing and State Management
-
 ## BLUF
 React Router enables multi-page navigation without full page reloads — the browser URL changes but React swaps components in place. State is data owned by a component that, when changed via its setter, triggers a re-render. These two concepts together cover navigation and dynamic UI behavior.
 
