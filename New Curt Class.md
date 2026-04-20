@@ -23,3 +23,33 @@
 - Cons:
 	- Can lead to short-sighted decisions
 	- May require later rework
+
+### Tell - Don't Ask
+- Principle that states you should tell objects what to do, not ask them about their state and make decisions for them
+
+### Solid:
+- Single Responsibility Principle
+- Open-Closed Principle
+- Liskov Substitution
+- Interface Segregation
+- Dependency Inversion
+
+
+### Single Responsibility Principle
+- Improved maintainability, testability, refactoring
+- Higher reusability
+- More files/classes and a tendency for pre-optimization
+- Boundary confusion and dependency explosion
+
+
+### Open-Closed - In Practice
+- Designing modules or classes that use abstractions
+- Adding new functionality by creating new components
+- Avoiding large if-else chains - adopting strategy pattern
+- Encourage code stability / preserves tested behavior
+- Makes it easier to handle new cases or features
+- Requires more upfront design and abstraction
+- Can lead to large number of small components
+
+### Liskov Substitution Principle
+- Principle that states objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program
