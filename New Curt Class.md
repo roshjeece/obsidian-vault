@@ -53,3 +53,23 @@
 
 ### Liskov Substitution Principle
 - Principle that states objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program
+- What is the minimum thing that actually gets this program working? The intent of building a car isn't to create an engine -- it's to build an operable vehicle. 
+
+### Interface Segregation Principle
+- Clients should not be forced to depend on interfaces they do not use
+- Splitting large interfaces into small specific ones
+- Ensuring classes only implement what's relevant
+- Preventing empty methods to satisfy interface contracts
+- Leads to focused and flexible code
+- Reduces risk of breaking changes
+- Can result in a large number of interfaces
+- Over-segmentation
+
+### Dependency Inversion Principle
+- High level modules should not depend on low-level modules; both should depend on abstractions
+- Using interfaces or abstract classes
+- Injecting dependencies rather than concrete implementations
+- Increases flexibility and testability
+- Makes it easier to swap or mock dependencies
+- Introduces complexity
+- Can be overkill for small projects
