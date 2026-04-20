@@ -14,3 +14,12 @@
 
 ### YAGNI - You Ain't Gonna Need It
 - Principle that states you should not implement something until it is necessary
+- Skipping features until there's a requirement
+- Avoiding overly generic solutions
+- Writing code for today's problems
+- Pros:
+	- Helps Developers Move Quickly
+	- Keeps Code Simple
+- Cons:
+	- Can lead to short-sighted decisions
+	- May require later rework
