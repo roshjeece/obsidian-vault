@@ -121,3 +121,5 @@ Retro:
 "Long for..."
 
 - Exposure to Tailwind
+- Challenge: Dependencies, packages being universal across machines
+- Challenge: API Service vs hard plugging methods and data (idk on the note for this)
