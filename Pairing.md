@@ -92,3 +92,32 @@ Remote Pairing
 	- Switch roles regularly
 - Goal:
 	- Divide thinking and doing - helps maintain quality, avoid tunnel vision, improve communication
+
+
+
+Since 20APR26:
+- Switching between teams, pairs every few days
+- Learning how to work with different ability levels
+- Learning different approaches to project structure
+- Driver/Navigator pairing
+- Different computer/display configurations
+- Referencing and guiding as the not active member of the pair (as in not at the main keyboard)
+- Creation of another app
+
+- Git/Merge Conflict Resolution
+- Allowing contributors across a Git repo
+- Briefly looked at free Git organization style repo to allow others to have admin access (such that they can also add new people)
+- Doing a "retro" (similar to an AAR) to talk about how our pairing practice went
+- Sharing context with members of team during dev stand-ups
+- Updating members of team whenever you're pushing to the repo
+- Learning from teammates new skills
+- Good practice to share context at end of day (what if member(s) of your team are not present the next day?)
+- "Lean slice"
+
+Retro:
+"Liked"
+"Learned"
+"Lacked"
+"Long for..."
+
+- Exposure to Tailwind
